@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Schedaule_students_page">
+    <StackLayout>
+        <Picker x:Name="facultyPicker"
+        Title="Выберите первый вариант"
+        SelectedIndexChanged="facultyPicker_SelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Не выбрано</x:String>
+                    <x:String>Строительный</x:String>
+                    <x:String>Факультет Электронно-информационных систем</x:String>
+                    <x:String>Машиностроительный</x:String>
+                    <x:String>Экономический</x:String>
+                    <x:String>Инженерных систем и экологии</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Picker x:Name="kyrsPicker" Title="Выберите первый вариант" SelectedIndexChanged="kyrsPicker_SelectedIndexChanged" IsVisible="False">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Не выбрано</x:String>
+                    <x:String>1 курс</x:String>
+                    <x:String>2 курс</x:String>
+                    <x:String>3 курс</x:String>
+                    <x:String>4 курс</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Picker x:Name="groupPicker" Title="Выберите второй вариант" IsVisible="False" SelectedIndexChanged="groupPicker_SelectedIndexChanged">
+
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+      </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button x:Name="outputButton"  Text="Вывести расписание"  HorizontalOptions="Center" IsVisible="false" Clicked="pressOutputButton"/>
+
+
+        <StackLayout>
+            <CollectionView x:Name="scheduleCollectionView" IsVisible="false">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Text="{Binding Time}"
+                                   LineBreakMode="WordWrap" />
+
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   Text="{Binding Subject}"
+                                   LineBreakMode="WordWrap" />
+
+                            <Label Grid.Row="0" Grid.Column="2"
+                                   Text="{Binding Teacher}"
+                                   LineBreakMode="WordWrap" />
+
+                            <Label Grid.Row="0" Grid.Column="3"
+                                   Text="{Binding Room}"
+                                   LineBreakMode="WordWrap" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

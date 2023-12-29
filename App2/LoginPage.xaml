@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.LoginPage">
+    <StackLayout>
+        <Frame  BackgroundColor="#2196f3" >
+            <Label Text="BrstuGO" HorizontalOptions ="Center" FontAttributes="Bold"  FontSize="25" TextColor="White" />
+        </Frame>
+        <StackLayout>
+            <Label Text="Добро пожаловать" TextColor="Black" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold" Margin="20"  />
+            <Label Text="Заполните данные для авторизации" TextColor="Black" HorizontalOptions="Center" Margin="0, 10, 0, 10"/>
+            <Entry x:Name="UsernameEntry" BackgroundColor="#ebedf0 "   Placeholder="Email"  Margin="10,0,10,0"/>
+            <Entry x:Name="PasswordEntry"  BackgroundColor="#ebedf0 " Placeholder="Пароль" Margin="10,0,10,0"  IsPassword="true" />
+            <Button Text="Войти" Clicked="LoginButton_Clicked"  TextColor="White" BackgroundColor="#2196f3" CornerRadius="15"   Margin="80,10,80,0"/>
+            <Label Text="email: admin"/>
+            <Label Text="пароль password"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="0,40,0,0" HorizontalOptions="Center" >
+            <Label Text="Еще нет аккаунта ?" TextColor="Gray"  FontSize="15" FontAttributes="Bold"  />
+            <Label Text="Создать аккаунт" TextDecorations="Underline" FontSize="15" TextColor="blue" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AddRegisterPage" />
+                </Label.GestureRecognizers>
+            </Label>
+           <!-- <Button Text="Регистрация" BackgroundColor="#2196f3" TextColor="White"  CornerRadius="15"   Margin="80,0,80,0" Clicked="AddRegisterPage"/> -->
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
