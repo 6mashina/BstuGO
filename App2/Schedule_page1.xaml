@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Schedule_page1">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <Label Text="Расписание" HorizontalOptions="Center" FontSize="25" />
+            </Frame>
+            <StackLayout>
+                <Button Text="Студентов" FontSize="15" Clicked="AddSchedule_students_page"/>
+                <Button Text="Преподавателей" FontSize="15"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
