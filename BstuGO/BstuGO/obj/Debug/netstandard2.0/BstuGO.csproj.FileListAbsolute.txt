@@ -1,0 +1,17 @@
+D:\BstuGo\BstuGO\BstuGO\BstuGO\bin\Debug\netstandard2.0\BstuGO.deps.json
+D:\BstuGo\BstuGO\BstuGO\BstuGO\bin\Debug\netstandard2.0\BstuGO.dll
+D:\BstuGo\BstuGO\BstuGO\BstuGO\bin\Debug\netstandard2.0\ref\BstuGO.dll
+D:\BstuGo\BstuGO\BstuGO\BstuGO\bin\Debug\netstandard2.0\BstuGO.pdb
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\BstuGO.csproj.AssemblyReference.cache
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\BstuGO.GeneratedMSBuildEditorConfig.editorconfig
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\BstuGO.AssemblyInfoInputs.cache
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\BstuGO.AssemblyInfo.cs
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\BstuGO.csproj.CoreCompileInputs.cache
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\XamlC.stamp
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\BstuGO.dll
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\refint\BstuGO.dll
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\BstuGO.pdb
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\NewsPage.xaml.g.cs
+D:\BstuGo\BstuGO\BstuGO\BstuGO\obj\Debug\netstandard2.0\Schedule.xaml.g.cs
