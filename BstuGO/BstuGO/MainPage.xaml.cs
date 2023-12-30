@@ -14,6 +14,7 @@ namespace BstuGO
         public MainPage()
         {
             InitializeComponent();
+            //sasha
 
         }
 
