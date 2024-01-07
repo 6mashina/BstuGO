@@ -1,4 +1,5 @@
-﻿using BstuGO.services;
+﻿using BstuGO.models;
+using BstuGO.services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,10 @@ namespace BstuGO.views
 	public partial class RegisterPage : ContentPage
 	{
 		DBServices services = new DBServices();
+        string coursePicker = "1";
 		public RegisterPage ()
 		{
+        
 			InitializeComponent ();
 		}
 
@@ -24,6 +27,7 @@ namespace BstuGO.views
         {
 			try
 			{
+
                 string email = UserEmailEntry.Text;
                 string password = PasswordEntry.Text;
                 string replyPassword = repeatPasswordEntry.Text;
@@ -36,10 +40,11 @@ namespace BstuGO.views
                 }
                 else
                 {
+                    await services.addStudents(coursePicker,email);
+                    
                     bool isSave = await services.Register(email, password);
                     if (isSave)
                     {
-
                         await DisplayAlert("Регистрация", "Регистрация завершена успешно", "ok");
                     }
                 }
@@ -53,6 +58,9 @@ namespace BstuGO.views
                 }else if (ex.Message.Contains("WEAK_PASSWORD"))
                 {
                     await DisplayAlert("Регистрация", "Пароль должен быть больше или равен 6 символам", "OK");
+                }else if (ex.Message.Contains("Object reference"))
+                {
+                    await DisplayAlert("Регистрация", "Введите данные!","ОК");
                 }
                 else
                 {
@@ -67,5 +75,14 @@ namespace BstuGO.views
             await Navigation.PushAsync(new LoginPage());
         }
 
+        private void facultyPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void coursePicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            coursePicker = picker.Items[picker.SelectedIndex];
+        }
     }
 }

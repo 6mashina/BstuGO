@@ -63,6 +63,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BaseUrl_iOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -144,5 +145,14 @@
       <Project>{CAE46609-D841-4D41-8911-41B3A8EFDE2E}</Project>
       <Name>BstuGO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\maps.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\maps_style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\script.js" />
   </ItemGroup>
 </Project>

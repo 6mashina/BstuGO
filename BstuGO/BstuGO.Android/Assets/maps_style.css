@@ -1,0 +1,55 @@
+html,
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.category_button {
+    position: absolute;
+    padding: 5px 10px;
+    font-size: 15px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.category_button:hover {
+    background-color: #2980b9;
+}
+
+.coffee_btn {
+    top: 50px;
+    left: 10px;
+}
+
+.canteen_btn {
+    top: 85px;
+    left: 10px;
+}
+
+.buffet_btn {
+    top: 120px;
+    left: 10px;
+}
+
+.print_btn {
+    top: 155px;
+    left: 10px;
+}
+
+.dean_btn {
+    top: 190px;
+    left: 10px;
+}

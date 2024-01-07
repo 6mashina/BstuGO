@@ -22,7 +22,7 @@ namespace BstuGO.views
 			InitializeComponent ();
             
 			bool HasKey = Preferences.ContainsKey("token");
-		    //Preferences.Remove("token"); для проверки регистрации и логина
+		    ///Preferences.Remove("token"); //для проверки регистрации и логина
 			if (HasKey)
 			{
 				string token = Preferences.Get("token","");
@@ -49,7 +49,7 @@ namespace BstuGO.views
                     Preferences.Set("token", token);
                     Preferences.Set("email", email);
 
-                    await Navigation.PushModalAsync(new MainPage());
+                    await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
                 }
                 else
                 {

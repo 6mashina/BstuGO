@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Firebase.Database.Query;
 using Firebase.Auth;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace BstuGO.services
 {
-    public class DBServices
+    internal class DBServices
     {
         FirebaseClient client;
         FirebaseAuthProvider authProvider;
@@ -53,5 +56,26 @@ namespace BstuGO.services
             await client.Child("Users").PostAsync(user);
             
         }
+
+        
+        public async Task addStudents(string course,string email)
+        {
+            models.Student std = new models.Student()
+            {
+                Course = course,
+                Email = email
+            };
+            await client.Child("Students").PostAsync(std);
+
+        }
+        public async Task<Student> GetStudent(string email)
+        {
+
+            var student = (await client.Child("Students").OnceAsync<Student>())
+                .FirstOrDefault(s => s.Object.Email == email)?.Object;
+           
+            return student;
+        }
+        
     }
 }

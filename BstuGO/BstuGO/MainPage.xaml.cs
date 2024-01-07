@@ -24,7 +24,7 @@ namespace BstuGO
 
         private async void Schedule_Class_Button(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AuthPage());
+            await Navigation.PushAsync(new Schedule());
         }
 
         private async void Maps_Button(object sender, EventArgs e)
@@ -40,6 +40,11 @@ namespace BstuGO
         private async void Profile_Button(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new NewsPage());
+        }
+
+        private async void Maps_Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Maps());
         }
     }
 }

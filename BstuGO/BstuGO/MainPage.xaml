@@ -8,7 +8,7 @@
                 <StackLayout Orientation="Horizontal">
                     <Image Source="logobstu.png" HeightRequest="50" WidthRequest="50" />
 
-                    <Label Text="BstuGO" TextColor="#2196f3" FontSize="35" FontAttributes="Bold" />
+                    <Label Text="BstuGO" TextColor="#2196f3" FontSize="35" FontAttributes="Bold" VerticalOptions="CenterAndExpand" />
                 </StackLayout>
             </Frame>
 
@@ -19,27 +19,34 @@
     </NavigationPage.TitleView>
 
     <StackLayout>
+
         <!--РАСПИСАНИЕ ЗАНЯТИЙ-->
-        <Button Text = "Расписание занятий" BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" 
-    TextColor="#FFFFFF" CharacterSpacing="2" HorizontalOptions="Center"  CornerRadius="13" 
-    Margin="0, 50, 0, 25" WidthRequest="425" Clicked="Schedule_Class_Button" />
+        <Button Text = "Расписание занятий" 
+            BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" TextColor="#FFFFFF" 
+            CharacterSpacing="1" HorizontalOptions="FillAndExpand"  CornerRadius="13" 
+            Margin="30, 50, 30, 25" Clicked="Schedule_Class_Button" />
 
         <!--РАСПИСАНИЕ ПРЕПОДАВАТЕЛЕЙ-->
-        <Button Text = "Расписание преподавателей" BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" 
-    TextColor="#FFFFFF" CharacterSpacing="2" HorizontalOptions="Center"  CornerRadius="13" 
-    Margin="25" WidthRequest="425" Clicked="Schedule_Class_Button" />
+        <!--<Button Text = "Расписание преподавателей" BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" 
+TextColor="#FFFFFF" CharacterSpacing="1" HorizontalOptions="FillAndExpand"  CornerRadius="13" 
+Margin="25" Clicked="Schedule_Class_Button" />-->
 
         <!--КАРТЫ-->
+<<<<<<< HEAD
         <Button Text = "Карты" BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" 
     TextColor="#FFFFFF" CharacterSpacing="2" HorizontalOptions="Center"  CornerRadius="13" 
     Margin="25" WidthRequest="425" Clicked="Maps_Button" />
+=======
+        <Button Text = "Карты" 
+            BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" TextColor="#FFFFFF" 
+            CharacterSpacing="1" HorizontalOptions="FillAndExpand"  CornerRadius="13" 
+            Margin="30,25" Clicked="Maps_Button_Clicked" />
+>>>>>>> fd9efe9fefe7443fe67523b10329cb342f00d19f
 
         <!--НОВОСТИ-->
-        <Button Text = "Новости" BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" 
-    TextColor="#FFFFFF" CharacterSpacing="2" HorizontalOptions="Center"  CornerRadius="13" 
-    Margin="25" WidthRequest="425" Clicked="News_Button" />
-
-        <!--#176fff-->
+        <Button Text = "Новости" BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" TextColor="#FFFFFF" 
+            CharacterSpacing="1" HorizontalOptions="FillAndExpand"  CornerRadius="13" 
+            Margin="30,25" Clicked="News_Button" />
 
     </StackLayout>
 

@@ -15,6 +15,13 @@ namespace BstuGO.views
 		public Maps ()
 		{
 			InitializeComponent ();
-		}
-	}
+            WebView webView = new WebView();
+            UrlWebViewSource urlSource = new UrlWebViewSource();
+            urlSource.Url = System.IO.Path.Combine(DependencyService.Get<IBaseUrl>().Get(), "maps.html");
+            webView.Source = urlSource;
+            this.Content = webView;
+        }
+        public interface IBaseUrl { string Get(); }
+
+    }
 }
