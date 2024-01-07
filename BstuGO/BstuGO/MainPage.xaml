@@ -32,7 +32,7 @@
         <!--КАРТЫ-->
         <Button Text = "Карты" BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" 
     TextColor="#FFFFFF" CharacterSpacing="2" HorizontalOptions="Center"  CornerRadius="13" 
-    Margin="25" WidthRequest="425" Clicked="Schedule_Class_Button" />
+    Margin="25" WidthRequest="425" Clicked="Maps_Button" />
 
         <!--НОВОСТИ-->
         <Button Text = "Новости" BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" 

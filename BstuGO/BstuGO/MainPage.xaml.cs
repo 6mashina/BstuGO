@@ -27,6 +27,11 @@ namespace BstuGO
             await Navigation.PushAsync(new AuthPage());
         }
 
+        private async void Maps_Button(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Maps());
+        }
+
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
 

@@ -5,7 +5,6 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame  BackgroundColor="#2196f3" >
-                <Label Text="BrstuGO" HorizontalOptions ="Center" FontAttributes="Bold"  FontSize="25" TextColor="White" />
             </Frame>
             <StackLayout>
                 <Label Text="Добро пожаловать" TextColor="Black" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold" Margin="20"  />
@@ -15,11 +14,14 @@
                 <Entry x:Name="PasswordEntry"  BackgroundColor="#ebedf0 " Placeholder="Пароль" Margin="10,0,10,0"  IsPassword="true" />
                 <Entry x:Name="repeatPasswordEntry"  BackgroundColor="#ebedf0 " Placeholder="Повторите пароль" Margin="10,0,10,0"  IsPassword="true" />
                 <Button Text="Регистрация"  TextColor="White" BackgroundColor="#2196f3" CornerRadius="15"   Margin="80,10,80,0" Clicked="btnReg_Clicked"/>
-                <Label Text="У меня уже есть аккаунт. Войти..." TextDecorations="Underline" HorizontalOptions="Center" TextColor="gray" Margin="0,20,0,0">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Label_Tapped" />
-                    </Label.GestureRecognizers>
-                </Label>
+                <StackLayout Orientation="Vertical" Margin="0,220,0,0" HorizontalOptions="Center" >
+                    <Label Text="У меня уже есть аккаунт." TextColor="Gray"  FontSize="15" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Text="Войти..." TextDecorations="Underline" HorizontalOptions="Center" TextColor="#2196f3">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Label_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
