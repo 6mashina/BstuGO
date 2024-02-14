@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "929579057853",
+    "firebase_url": "https://registerdb-ea982-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "registerdb-ea982",
+    "storage_bucket": "registerdb-ea982.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929579057853:android:142861ffcd112631cb2dd4",
+        "android_client_info": {
+          "package_name": "com.companyname.mywork"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7BQL5bgVzcRcv7duvYGJe5UWENPlefDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

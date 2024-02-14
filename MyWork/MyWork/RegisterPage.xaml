@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MyWork.viewModels"
+             x:Class="MyWork.RegisterPage">
+
+
+    <StackLayout>
+        
+        
+        <Label Text="Регистрация"
+               TextColor="Black"
+               HorizontalOptions="Center"
+               FontSize="25"
+               FontAttributes="Bold"
+               Margin="20, 20, 20, 0"/>
+
+        <Label Text="Заполните общие данные"
+               FontSize="18"
+               TextColor="Black"
+               HorizontalOptions="Center"
+               Margin="0, 5, 0, 30"/>
+
+
+        <controls:CustomEntry x:Name="FirstNameEntry"
+               BackgroundColor="#ebedf0"
+               Placeholder=" Имя" 
+               Margin="10,0,10,0"/>
+        <Label x:Name="label_1" Text="Укажите имя" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false"/>
+
+        <controls:CustomEntry x:Name="LastNameEntry"
+               BackgroundColor="#ebedf0"
+               Placeholder=" Фамилия" 
+               Margin="10,0,10,0"/>
+        
+        <Label x:Name="label_2" Text="Укажите фамилию" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false"/>
+
+
+        <!-- <controls:CustomEntry x:Name="UserNameEntry"
+               BackgroundColor="#ebedf0"
+               Placeholder=" Пользовательское имя" 
+               Margin="10,0,10,0"/>
+        <Label x:Name="label_3" Text="Укажите желаемое пользовательское имя" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false"/> -->
+
+
+
+
+        <Label  Text="Пол" FontSize="15" Margin="10, 0 ,0 ,0"/>
+        <StackLayout Orientation="Horizontal" Margin="10, 0 ,0 ,0">
+            <RadioButton x:Name="maleGenger" GroupName="Gender" Content='Мужской'  />
+            <RadioButton x:Name="femaleGenger" GroupName="Gender" Content='Женский' />
+        </StackLayout>
+        <Label x:Name="label_4" Text="Укажите ваш пол" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false"/>
+
+        <Label Text="Статус" FontSize="15" Margin="10, 0 ,0 ,0"/>
+        <StackLayout Orientation="Horizontal" Margin="10, 0 ,0 ,0">
+            <RadioButton x:Name="teacherStatus" GroupName="Status" Content='Преподаватель'/>
+            <RadioButton x:Name="studentStatus" GroupName="Status" Content='Студент'/>
+        </StackLayout>
+        <Label x:Name="label_5" Text="Укажите ваш статус" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false"/>
+
+
+        <Button Text="Далее"
+                TextColor="White" 
+                BackgroundColor="#2196f3" 
+                CornerRadius="15" 
+                Margin="100,20,100,0"
+                Clicked="AddRegisterPage_2"/>
+
+        <StackLayout Orientation="Vertical"  Margin="0,130,0,0" HorizontalOptions="Center" >
+
+            <Label Text="У меня уже есть аккаунт. Войти..." TextDecorations="Underline" HorizontalOptions="Center" TextColor="gray" Margin="0,20,0,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="backToLoginPage" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+
+    </StackLayout>
+</ContentPage>

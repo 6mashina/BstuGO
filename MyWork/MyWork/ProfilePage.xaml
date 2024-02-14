@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyWork.ProfilePage">
+    <StackLayout>
+
+      <!--  <Label 
+            x:Name="userNameLabel"
+            Text=" " 
+            FontSize="30"
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontAttributes="Bold"
+            Margin="10, 0, 0, 0"/> -->
+
+        <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+
+            <Image Source="persona.png"
+                   WidthRequest="20"
+                   Margin="10, 0, 0, 0"
+                   HeightRequest="20"/>
+            
+            <Label 
+                Text="Имя:" 
+                FontSize="17" 
+                TextColor="Black"
+                Margin="10, 0, 0, 0"/>
+
+            <Label 
+                x:Name="firstNameLabel"
+                Text=" " 
+                FontSize="17" 
+                TextColor="Black"/>
+
+            <Label 
+                x:Name="lastNameLabel"
+                Text=" " 
+                FontSize="17" 
+                TextColor="Black"/>
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            
+            <Image Source="email.png"
+                   Margin="10, 0, 0, 0"
+               WidthRequest="20"
+               HeightRequest="20"/>       
+            
+        <Label 
+            x:Name="emailLabel"
+            Text="Email: " 
+            FontSize="17" 
+            TextColor="Black"
+            Margin="10, 0, 0, 0"/>
+        </StackLayout>
+        
+
+
+        <StackLayout Orientation="Horizontal">
+
+            <Image Source="student_ticket_icon.png"
+                   Margin="10, 0, 0, 0"
+               WidthRequest="20"
+               HeightRequest="20"/>
+            
+            <Label 
+            x:Name="numberLabel"
+            Text="Студенческий: " 
+            FontSize="17" 
+            TextColor="Black"
+            Margin="10, 0, 0, 0"/>
+        </StackLayout>
+        
+
+
+        <StackLayout Orientation="Horizontal">
+
+            <Image Source="genger_icon.png"
+                   Margin="10, 0, 0, 0"
+               WidthRequest="20"
+               HeightRequest="20"/>
+            <Label 
+            x:Name="genderLabel"
+            Text="Пол: " 
+            FontSize="17" 
+            TextColor="Black"
+            Margin="10, 0, 0, 0"/>
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+
+            <Image Source="teacher.png"
+                   Margin="10, 0, 0, 0"
+               WidthRequest="20"
+               HeightRequest="20"/>
+            
+            <Label 
+            x:Name="statusLabel"
+            Text="Статус: " 
+            FontSize="17" 
+            TextColor="Black"
+            Margin="10, 0, 0, 0"/>   
+            
+        </StackLayout>
+        
+
+        
+        <Label 
+            x:Name="facultyLabel"
+            Text="Факультет: " 
+            FontSize="17" 
+            TextColor="Black"
+            Margin="10, 0, 0, 0"/>
+
+        <Label 
+            x:Name="specialityLabel"
+            Text="Специальность: " 
+            FontSize="17" 
+            TextColor="Black"
+            Margin="10, 0, 0, 0"/>
+
+        <Label 
+            x:Name="kyrsLabel"
+            Text="Курс: " 
+            FontSize="17" 
+            TextColor="Black"
+            Margin="10, 0, 0, 0"/>
+
+        <Button
+            Margin="20, 250, 20, 0"
+            TextColor="White" 
+            BackgroundColor="#2196f3" 
+            CornerRadius="12"   
+            Text="Выйти из аккаунта"
+            Clicked="ExitAccount"/>
+        
+        <Button
+            Text="Удалить аккаунт"
+            TextColor="White" 
+            BackgroundColor="Red" 
+            CornerRadius="12"   
+            Margin="20, 0, 20 ,0" 
+            Clicked="DeleteAccount"/>
+
+        <Button
+            Text="Изменить"
+            TextColor="Black" 
+            BackgroundColor="#87CEEB" 
+            CornerRadius="12"   
+            Margin="20, 0, 20 ,0" 
+            Clicked="ChangeClicked"/>
+        
+    </StackLayout>
+    
+</ContentPage>

@@ -1,0 +1,157 @@
+﻿
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MyWork.viewModels"
+             x:Class="MyWork.RegisterPage_2">
+    <ScrollView x:Name="scrollView">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+
+            <StackLayout >
+                <Label Text="Регистрация"
+           TextColor="Black"
+           HorizontalOptions="Center"
+           FontSize="25"
+           FontAttributes="Bold"
+           Margin="20, 30, 20, 0"/>
+
+                <Label Text="Заполните студенческие данные"
+           FontSize="18"
+           TextColor="Black"
+           HorizontalOptions="Center"
+           Margin="0, 0, 0, 0"/>
+
+            </StackLayout>
+
+
+
+            <controls:CustomEntry
+            x:Name="Record_numberEntry"
+            BackgroundColor="#ebedf0"
+            Placeholder=" Номер зачетки"
+        Grid.Row="2"
+            Margin="10,0,10,0" />
+            <Label x:Name="label_recordNumber" Text="Укажите номер зачетки" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false" Grid.Row="3"/>
+
+            <controls:CustomPicker x:Name="facultyPicker" Title=" Выберите Факультет" Margin="10,0,10,0" BackgroundColor="#ebedf0" Grid.Row="4">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Электронно-информационных систем</x:String>
+                        <x:String>Строительный</x:String>
+                        <x:String>Машиностроительный</x:String>
+                        <x:String>Экономический</x:String>
+                        <x:String>Инженерных систем и экологии</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </controls:CustomPicker>
+
+            <Label x:Name="label_faculty" Text="Укажите ваш факультет" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false" Grid.Row="5"/>
+
+
+
+            <controls:CustomPicker
+            x:Name="coursePicker" 
+            Title=" Выберите курс" 
+            Margin="10,0,10,0"
+            BackgroundColor="#ebedf0"
+         Grid.Row="6">
+
+
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Первый</x:String>
+                        <x:String>Второй</x:String>
+                        <x:String>Третий</x:String>
+                        <x:String>Четвертый</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </controls:CustomPicker>
+            <Label x:Name="label_course" Text="Укажите курс" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false"  Grid.Row="7"/>
+
+            <controls:CustomPicker 
+            x:Name="specialityPicker" 
+            Title=" Выберите специальность" 
+            Margin="10,0,10,0"
+            BackgroundColor="#ebedf0"
+         Grid.Row="8">
+
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Программное обеспечение</x:String>
+                        <x:String>Искусственный интереллект</x:String>
+                        <x:String>Вычислительные машины, системы и сети</x:String>
+                        <x:String>Промышленная электроника</x:String>
+                        <x:String>Мобильные системы</x:String>
+                        <x:String>Австоматизированные системы</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </controls:CustomPicker>
+
+            <Label x:Name="label_speciality" Text="Укажите Специальность" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false"  Grid.Row="9"/>
+
+            <controls:CustomEntry x:Name="UserEmailEntry" 
+           BackgroundColor="#ebedf0 "
+           Placeholder=" Email"
+                           Grid.Row="10"
+           Margin="10,0,10,0"/>
+            <Label x:Name="label_email" Text="Укажите ваш Email" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false"  Grid.Row="11"/>
+
+            <controls:CustomEntry x:Name="PasswordEntry"
+           BackgroundColor="#ebedf0"
+           Placeholder=" Пароль"
+           Margin="10,0,10,0"
+                           Grid.Row="12"
+           IsPassword="true" />
+            <Label x:Name="label_password" Text="Укажите пароль" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false"  Grid.Row="13"/>
+
+            <controls:CustomEntry  x:Name="repeatPasswordEntry"
+           BackgroundColor="#ebedf0"
+           Placeholder=" Подтвердите"
+           Margin="10,0,10,0"
+           IsPassword="true"
+                            Grid.Row="14"/>
+            <Label x:Name="label_repeatPass" Text="Укажите пароль" TextColor="Red" FontSize="15" Margin="10, 0 ,0 ,0" IsVisible="false"  Grid.Row="15"/>
+
+            <StackLayout Orientation="Horizontal"  Grid.Row="16">
+                <CheckBox x:Name="boxPass" IsChecked="False" CheckedChanged="showPassword" Margin="10, 0, 0, 0"/>
+                <Label 
+                Text="Показать пароль" 
+                Margin="10, 6, 0, 0" 
+                FontSize="15" 
+                TextColor="Black"/>
+            </StackLayout>
+            <Button Text="Регистрация"
+                TextColor="White" 
+                BackgroundColor="#2196f3" 
+                CornerRadius="15" 
+                Margin="100,20,100,30"
+                Clicked="toRegister"
+            Grid.Row="17"/>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

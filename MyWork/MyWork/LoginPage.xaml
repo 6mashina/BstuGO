@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MyWork.viewModels"
+             x:Class="MyWork.LoginPage">
+    <StackLayout>
+        <StackLayout >
+            <Label Text="Добро пожаловать" 
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   Margin="0, 20, 0, 0"/>
+
+            <Label Text="Заполните данные для авторизации"
+                   FontSize="18"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   Margin="0, 5, 0, 40"/>
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Вход" 
+                       TextColor="Black"
+                       HorizontalOptions="Start"
+                       Margin="20, 0, 0, 0"
+                       Grid.Row="0" Grid.Column="0"
+                       FontSize="22"/>
+                
+                
+                <Label Text="Регистрация" 
+                       FontSize="17" 
+                       TextDecorations="Underline"
+                       Grid.Row="0" Grid.Column="0"
+                       TextColor="#293133"
+                       Margin="0, 7, 20, 0"
+                       FontAttributes="Bold"
+                       HorizontalOptions="End"
+                       >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AddRegisterPage" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+
+
+            </Grid>
+
+
+            <controls:CustomEntry x:Name="EmailEntry"
+                                      Margin="20, 0, 20, 0"
+                                      BackgroundColor="#ebedf0"
+                                      Placeholder=" Email"
+                                      WidthRequest="350"
+                                  ClearButtonVisibility="WhileEditing"
+                                      />
+
+
+
+            <controls:CustomEntry x:Name="PasswordEntry"
+                       BackgroundColor="#ebedf0"
+                       Margin="20, 0, 20, 0"
+                       Placeholder=" Пароль"
+                       IsPassword="true"/>
+
+
+            <Label Text="Забыли пароль?"
+                   HorizontalOptions="End"
+                   Margin="0, 0, 20, 0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="forgotPasClicked" />
+                </Label.GestureRecognizers>
+            </Label>
+
+
+
+            <Button Text="Войти" 
+                    Clicked="LoginButton_Clicked"  
+                    TextColor="White" BackgroundColor="#2196f3" 
+                    CornerRadius="12"
+                    HeightRequest="50"
+                    Margin="20, 40, 20, 0"/>
+
+            <Button Text="Гость" 
+                        Clicked="LoginButton_Clicked_2"  
+                        Margin="20, 0, 20, 0"
+                        TextColor="White" BackgroundColor="#6C92AF" 
+                        CornerRadius="12"   />
+
+        </StackLayout>
+
+
+    </StackLayout>
+</ContentPage>

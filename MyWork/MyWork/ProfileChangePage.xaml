@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MyWork.viewModels"
+             x:Class="MyWork.ProfileChangePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0, 20, 0, 0">
+
+                <!--<StackLayout Orientation="Horizontal">
+                    <Label Text="User name:"
+                           TextColor="Black"
+                           Margin="10, 10, 0, 0"
+                           FontSize="18"/>
+                    <Entry x:Name="userNameEntry"
+                           BackgroundColor="#ebedf0"
+                           WidthRequest="240" HorizontalOptions="EndAndExpand"/>
+                </StackLayout> -->
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Имя:"
+                           Margin="10, 10, 0, 0"
+                           TextColor="Black"
+                           FontSize="18"/>
+                    
+                    <Entry x:Name="firstNameEntry"
+                           BackgroundColor="#ebedf0" 
+                           WidthRequest="240" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Фамилия:"
+                           Margin="10, 10, 0, 0"
+                           TextColor="Black"
+                           FontSize="18"/>
+                    
+                    <Entry x:Name="lastNameEntry"
+                           BackgroundColor="#ebedf0"
+                           WidthRequest="240" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Студенческий:" 
+                           Margin="10, 10, 0, 0"
+                           TextColor="Black"
+                           FontSize="18"/>
+                    
+                    <Entry x:Name="numberEntry"
+                           BackgroundColor="#ebedf0"
+                           WidthRequest="240" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Пол:"
+                           Margin="10, 10, 0, 0"
+                           TextColor="Black"
+                           FontSize="18"/>
+                    <Entry x:Name="genderEntry"
+                           BackgroundColor="#ebedf0"
+                           WidthRequest="240" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Статус:" 
+                           Margin="10, 10, 0, 0"
+                           TextColor="Black" 
+                           FontSize="18"/>
+                    <Entry x:Name="statusEntry"
+                           BackgroundColor="#ebedf0"
+                           WidthRequest="240" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Факультет:" 
+                           Margin="10, 10, 0, 0"
+                           TextColor="Black" 
+                           FontSize="18"/>
+                    
+                    <controls:CustomPicker
+                        x:Name="facultyPicker" 
+                        BackgroundColor="#ebedf0"
+                        WidthRequest="240" HorizontalOptions="EndAndExpand">
+
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Электронно-информационных систем</x:String>
+                                <x:String>Строительный</x:String>
+                                <x:String>Машиностроительный</x:String>
+                                <x:String>Экономический</x:String>
+                                <x:String>Инженерных систем и экологии</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </controls:CustomPicker>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Специальность:" 
+                           Margin="10, 10, 0, 0"
+                           TextColor="Black" 
+                           FontSize="18"/>
+
+                    <controls:CustomPicker 
+                x:Name="specialityPicker" 
+                         WidthRequest="240" HorizontalOptions="EndAndExpand"
+                BackgroundColor="#ebedf0">
+
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>ПО</x:String>
+                                <x:String>ИИ</x:String>
+                                <x:String>Э</x:String>
+                                <x:String>ПЭ</x:String>
+                                <x:String>МС</x:String>
+                                <x:String>АС</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </controls:CustomPicker>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Курс:"
+                           Margin="10, 10, 0, 0"
+                           TextColor="Black"
+                           FontSize="18"/>
+                    <controls:CustomPicker
+                        x:Name="coursePicker" 
+                        BackgroundColor="#ebedf0"
+                        WidthRequest="240" HorizontalOptions="EndAndExpand">
+
+
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Первый</x:String>
+                                <x:String>Второй</x:String>
+                                <x:String>Третий</x:String>
+                                <x:String>Четвертый</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </controls:CustomPicker>
+                </StackLayout>
+                <Button 
+                    Text="Сохранить" 
+                    BackgroundColor="#2196f3" 
+                    TextColor="White"
+                    CornerRadius="12"   
+                    Margin="20" 
+                    Clicked="ChangeClicked"/>
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
