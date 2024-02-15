@@ -31,7 +31,7 @@ namespace BstuGO.views
 				if (!string.IsNullOrEmpty(token))
                     
 				{
-					Navigation.PushModalAsync(new MainTabbedPage());
+					Navigation.PushModalAsync(new MainTabbedPage(false));
 				}
 				
 			}
@@ -74,7 +74,7 @@ namespace BstuGO.views
                             Preferences.Set("token", token);
                             Preferences.Set("email", email);
 
-                            await Navigation.PushModalAsync(new MainTabbedPage());
+                            await Navigation.PushModalAsync(new MainTabbedPage(false));
                         }
                     }
                     else
@@ -87,7 +87,7 @@ namespace BstuGO.views
         }
         private async void BtnSignINGhost_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new MainTabbedPage()));
+            await Navigation.PushModalAsync(new MainTabbedPage(true));
         }
         private async void AddRegisterPage(object sender, EventArgs e)
         {
@@ -96,6 +96,11 @@ namespace BstuGO.views
         private async void forgotPasClicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new ResetPasswordPage());
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

@@ -55,6 +55,7 @@ namespace BstuGO.views
             if (consent)
             {
                 Preferences.Remove("token");
+                Preferences.Remove("email");
                 Application.Current.MainPage = new NavigationPage(new LoginPage());
             }
         }
@@ -75,6 +76,7 @@ namespace BstuGO.views
                 {
                     await DisplayAlert("Удаление аккаунта", "Аккаунт успешно удален", "OK");
                     Preferences.Remove("token");
+                    Preferences.Remove("email");
                     Application.Current.MainPage = new NavigationPage(new LoginPage());
                 }
                 else

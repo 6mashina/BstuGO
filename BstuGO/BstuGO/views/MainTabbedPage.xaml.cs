@@ -12,7 +12,7 @@ namespace BstuGO.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainTabbedPage : TabbedPage
     {
-        public MainTabbedPage ()
+        public MainTabbedPage (bool isGhost)
         {
             InitializeComponent();
 
@@ -38,9 +38,17 @@ namespace BstuGO.views
             Children.Add(schedulesPage);
             Children.Add(newsPage);
             Children.Add(mapsPage);
-            Children.Add(profilesPage);
+            if (!isGhost)
+            {
+                Children.Add(profilesPage);
+            }
+           
 
 
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

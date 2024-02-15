@@ -55,22 +55,26 @@ namespace BstuGO.views
             {
                 // Получение UID текущего пользователя
                 User user = new User();
-              
-                /*existingValue.FirstName = firstNameEntry.Text;
-                existingValue.LastName = lastNameEntry.Text;
-                existingValue.Record_number = numberEntry.Text;
-                existingValue.Gender = genderEntry.Text;
-                existingValue.Status = statusEntry.Text;
-                existingValue.Faculry = facultyPicker.SelectedItem as string;
-                existingValue.Speciality = specialityPicker.SelectedItem as string;
-                existingValue.Course = coursePicker.SelectedItem as string;
-                await firebase
-                    .Child("Users")
-                    .Child(uid)
-                    .PutAsync(existingValue);*/
+                user.Email = Preferences.Get("email", "");
+                user.FirstName = firstNameEntry.Text;
+                user.LastName = lastNameEntry.Text;
+                user.GradebookNumber = numberEntry.Text;
+                user.Gender = genderEntry.Text;
+                user.Role = statusEntry.Text;
+                user.Faculty = facultyPicker.SelectedItem as string;
+                user.Specialization = specialityPicker.SelectedItem as string;
+                user.Course = coursePicker.SelectedItem as string;
 
-                await DisplayAlert("Изменено", "Ваши данные успешно изменены", "OK");
-
+                string response = await services.uploadUser(user);
+                if (response.Contains("DATA_UPDATE"))
+                {
+                    await DisplayAlert("Изменено", "Ваши данные успешно изменены", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Ошибка", "Произошла ошибка", "OK");
+                }
+          
                 OnAppearing();
 
             }

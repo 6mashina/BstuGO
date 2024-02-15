@@ -83,6 +83,19 @@ namespace BstuGO.services
             }
         }
 
+        public async Task<string> uploadUser(User user)
+        {
+            var url = $"{BaseUrl}/upload_user";
+            try
+            {
+                return await ServerConn.postData(url, user);
+            }
+            catch (Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
+        }
+
        
 
 
