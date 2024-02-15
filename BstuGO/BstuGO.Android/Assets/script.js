@@ -20,6 +20,16 @@ const categoriesData = {
             photo: '',
             hint: 'Кофепоинт'
         },
+        {
+            lat: 52.09563217698508,
+            lon: 23.758714500047724,
+            name: 'Кофейный автомат',
+            icon: 'https://cdn-icons-png.flaticon.com/128/3081/3081183.png',
+            description: '',
+            work_time: '',
+            photo: '',
+            hint: 'Кофепоинт'
+        },
     ],
     canteens: [
         {
@@ -71,8 +81,237 @@ const categoriesData = {
     ]
 };
 
+const inputsData = [
+    {
+        id: 1,
+        coordinates: [52.09669129633542,23.758239508724536],
+        offset: [-10, -5],
+        name: '1-й корпус'
+    },
+    {
+        id: 2,
+        coordinates: [52.0956952076013,23.756876834695724],
+        offset: [-15, -8],
+        name: '2-й и 3-й корпус'
+    },
+    {
+        id: 3,
+        coordinates: [52.09562364354393,23.759130917417963],
+        offset: [-7, -6],
+        name: '5-й корпус'
+    },
+    {
+        id: 4,
+        coordinates: [52.09633501744579,23.759713585667857],
+        offset: [0, 0],
+        name: 'Спортивный комплекс'
+    },
+    {
+        id: 5,
+        coordinates: [52.09453638642828,23.760066780219404],
+        offset: [0-3, -5],
+        name: 'Общежитие №3'
+    },
+    {
+        id: 6,
+        coordinates: [52.094624308673325,23.760859152402446],
+        offset: [0, 0],
+        name: 'Общежитие №1"'
+    },
+    {
+        id: 7,
+        coordinates: [52.09421229300924,23.760716921659053],
+        offset: [-5, -3],
+        name: 'ТЦ "Зодчие"'
+    },
+    {
+        id: 8,
+        coordinates: [52.093857651414346,23.760983067334546],
+        offset: [-10, -7],
+        name: 'Общежитие №4'
+    },
+    {
+        id: 9,
+        coordinates: [52.09442659805926,23.761976695704632],
+        offset: [-3, -9],
+        name: 'Общежитие №2'
+    }
+]
+
+const pathsData = [
+    {
+        id: 1,
+        coordinates: [
+            [52.098580617064556,23.75938441703253],
+            [52.098414602383,23.759447448944403],
+            [52.097166355409556,23.76005186842315],
+            [52.09515042627724,23.76102962073066]
+        ]
+    },
+    {
+        id: 2,
+        coordinates: [
+            [52.09646561436229,23.76038985509043],
+            [52.096376498505535,23.759878674507455],
+            [52.09636658670646,23.759841123581246],
+            [52.09635254498733,23.759812289834322],
+            [52.09633809027181,23.75979418492348],
+            [52.096312484764205,23.75978546774419],
+            [52.09587951134966,23.75997276080208],
+            [52.09577213220618,23.760019699459846],
+            [52.09579360805566,23.760066638117618],
+            [52.095812605913835,23.760129670029464],
+            [52.095840689689304,23.76022488844947],
+            [52.09585886153455,23.760266462689213],
+            [52.095900161155164,23.760338882332622],
+            [52.09593320082399,23.760377774363324],
+            [52.09597615235669,23.760428736334628],
+            [52.096005062018754,23.760483721619412],
+            [52.0960587513412,23.760534683590713],
+            [52.096232025833764,23.761571510788634],
+            [52.096341055832326,23.760450347420406],
+            [52.09632949205729,23.76033367132827],
+            [52.096308016467106,23.76029746150658],
+            [52.096283397224326,23.760272084627136],
+            [52.096087638372275,23.760111152086242],
+            [52.09588279274192,23.759974359426465]
+        ]
+    },
+    {
+        id: 3,
+        coordinates: [
+            [52.095930949503455,23.760649810294872],
+            [52.09503265613496,23.76020498958378],
+            [52.0949661624273,23.760235164435198],
+            [52.094950881250604,23.7602626570776],
+            [52.095105478588806,23.76108071195978],
+            [52.09490660743952,23.761068463751382],
+            [52.09486861093943,23.761071145960397],
+            [52.094338375454605,23.76126672460368],
+            [52.09425081713249,23.76119430496027],
+            [52.094218602234655,23.761011914747247],
+            [52.09436893822449,23.76070211960603],
+            [52.094511013527146,23.760632382171636],
+            [52.09452670786407,23.760726259487175],
+            [52.094538272108785,23.760750399368295],
+            [52.09455644448726,23.7607664926224],
+            [52.09458205100793,23.76076515151788],
+            [52.094681998898864,23.760715530651122],
+            [52.094948161573726,23.76026696932519]
+        ]
+    },
+    {
+        id: 4,
+        coordinates: [
+            [52.0943656565315,23.76070508124481],
+            [52.09397078985666,23.760901044635318]
+        ]
+    },
+    {
+        id: 5,
+        coordinates: [
+            [52.09496541279962,23.760234112264758],
+            [52.09493402443044,23.76021533680164],
+            [52.0949216342786,23.760218019010654],
+            [52.09451694574888,23.760410038253184],
+            [52.094490100163256,23.760442895313613],
+            [52.09448679609007,23.760499221702915],
+            [52.094509511588335,23.760631320496913]
+        ]
+    },
+    {
+        id: 6,
+        coordinates: [
+            [52.09503548563739,23.760203457929073],
+            [52.09577329829484,23.7600184974534],
+            [52.09556970909488,23.759543803884938],
+            [52.095427295336556,23.758834835774906],
+            [52.095522267847755,23.75842090280081],
+            [52.09557665574661,23.75796388810741],
+            [52.09565966847284,23.757810331641313],
+            [52.09570220727239,23.757668845115784],
+            [52.09578439376962,23.75762391811478],
+            [52.096491241084834,23.75725700550988],
+            [52.096554841578424,23.75737502270654],
+            [52.09673618045405,23.758281974399562],
+            [52.0967526999804,23.75831013759421],
+            [52.097349369990994,23.758812127519132],
+            [52.09822531870109,23.759378073621274],
+            [52.09837561349662,23.75942098896551],
+            [52.098414432939755,23.7594457993989]
+        ]
+    },
+    {
+        id: 7,
+        coordinates: [
+            [52.094384260570116,23.762075203365896],
+            [52.09449398519292,23.762071180052363],
+            [52.09516922674435,23.76173411519563],
+            [52.095216309040325,23.76166974217926],
+            [52.09510562426525,23.76108233840499]
+        ]
+    },
+    {
+        id: 8,
+        coordinates: [
+            [52.097166680406346,23.760049404172538],
+            [52.09683641742627,23.758376589642587],
+            [52.096847981069224,23.758349097000185],
+            [52.096864913540976,23.7583229454623],
+            [52.098176617501274,23.75763487827507]
+        ]
+    },
+    {
+        id: 9,
+        coordinates: [
+            [52.09551009008981,23.759251273248235],
+            [52.09503465509566,23.76020408463094]
+        ]
+    },
+    {
+        id: 10,
+        coordinates: [
+            [52.098107340963104,23.757306567015327],
+            [52.09669092990225,23.758048906820072]
+        ]
+    },
+    {
+        id: 11,
+        coordinates: [
+            [52.09646694931347,23.756663456372635],
+            [52.096560784415296,23.757170433862342],
+            [52.096555828536616,23.757374281747474]
+        ]
+    },
+    {
+        id: 12,
+        coordinates: [
+            [52.096310296886244,23.755922727432377],
+            [52.09633920633067,23.755959607806314],
+            [52.09646689720582,23.756662236752508],
+            [52.09615043146677,23.75682908277931]
+        ]
+    },
+    {
+        id: 13,
+        coordinates: [
+            [52.095785554613805,23.757622180966116],
+            [52.09579381455464,23.75749812879916],
+            [52.09582437632238,23.757451860693664],
+            [52.09575994878743,23.757122619537082],
+            [52.09575829679813,23.757085068610873],
+            [52.095769860721965,23.757048188236908],
+            [52.095788032596204,23.757029412773818],
+            [52.09614981654398,23.75682958820222],
+            [52.096463684581025,23.757143132534146],
+            [52.09649176794453,23.757259808626284]
+        ]
+    },
+]
+
 const polygonData = [
     {
+        id: 1,
         polygonCoordinates: [
             [52.096445985756695,23.758217054913647],
             [52.09645716142553,23.75826332927346],
@@ -98,6 +337,7 @@ const polygonData = [
         markerTemplate: 'islands#yellowStretchyIcon'
     },
     {
+        id: 2,
         polygonCoordinates: [
             [52.09571818127079,23.756590160266573],
             [52.09572520223125,23.756619664565743],
@@ -123,6 +363,7 @@ const polygonData = [
         markerTemplate: 'islands#blueStretchyIcon'
     },
     {
+        id: 3,
         polygonCoordinates: [
             [52.09539859034486,23.756790477898342],
             [52.095463844404485,23.757109660771118],
@@ -138,6 +379,7 @@ const polygonData = [
         markerTemplate: 'islands#redStretchyIcon'
     },
     {
+        id: 4,
         polygonCoordinates: [
             [52.0958065592465,23.759146959789224],
             [52.09579633757247,23.7591519051121],
@@ -173,6 +415,7 @@ const polygonData = [
         markerTemplate: 'islands#darkGreenStretchyIcon'
     },
     {
+        id: 5,
         polygonCoordinates: [
             [52.095869978863966,23.75766735499047],
             [52.09597157583621,23.758174292494296],
@@ -190,6 +433,7 @@ const polygonData = [
         markerTemplate: 'islands#pinkStretchyIcon'
     },
     {
+        id: 6,
         polygonCoordinates: [
             [52.096532007389754,23.75738827545522],
             [52.09663525480333,23.757903930138536],
@@ -205,6 +449,7 @@ const polygonData = [
         markerTemplate: 'islands#darkBlueStretchyIcon'
     },
     {
+        id: 7,
         polygonCoordinates: [
             [52.09610769232424,23.759582560666956],
             [52.09665955299924,23.759292196079105],
@@ -223,6 +468,7 @@ const polygonData = [
         markerTemplate: 'islands#orangeStretchyIcon'
     },
     {
+        id: 8,
         polygonCoordinates: [
             [52.09500663461377,23.760659503601403],
             [52.09504628301156,23.760874080322587],
@@ -238,6 +484,7 @@ const polygonData = [
         markerTemplate: 'islands#violetStretchyIcon'
     },
     {
+        id: 9,
         polygonCoordinates: [
             [52.09444945841464,23.761728020516294],
             [52.09446298447413,23.761799392638316],
@@ -257,6 +504,7 @@ const polygonData = [
         markerTemplate: 'islands#violetStretchyIcon'
     },
     {
+        id: 10,
         polygonCoordinates: [
             [52.09461042133827,23.759805800429397],
             [52.094639331889944,23.759958686343175],
@@ -276,6 +524,7 @@ const polygonData = [
         markerTemplate: 'islands#violetStretchyIcon'
     },
     {
+        id: 11,
         polygonCoordinates: [
             [52.09411387144938,23.760914859539838],
             [52.09414856449737,23.761108649141264],
@@ -294,6 +543,124 @@ const polygonData = [
         offset: [0,0],
         markerTemplate: 'islands#violetStretchyIcon'
     },
+    {
+        id: 12,
+        polygonCoordinates: [
+            [52.09559735432828,23.75776676932559],
+            [52.0957369477138,23.758418546116204],
+            [52.09549410450026,23.758552656566962],
+            [52.09535533635314,23.757903561985362],
+            [52.09559735432828,23.75776676932559]
+        ],
+        name: 'Парковка №1',
+        textCoordinates: [52.09554851099431,23.758150721958366],
+        fillColor: '#808080',
+        strokeColor: '#444444',
+        offset: [0,0],
+        markerTemplate: 'islands#grayStretchyIcon'
+    },
+    {
+        id: 13,
+        polygonCoordinates: [
+            [52.09527788261514,23.758071514612148],
+            [52.09540551601555,23.758615063696553],
+            [52.09506891923676,23.758826287656476],
+            [52.09494091453409,23.75828368109622],
+            [52.09527788261514,23.758071514612148]
+        ],
+        name: 'Парковка №2',
+        textCoordinates: [52.09519207959898,23.75844865609265],
+        fillColor: '#808080',
+        strokeColor: '#444444',
+        offset: [0,0],
+        markerTemplate: 'islands#grayStretchyIcon'
+    },
+    {
+        id: 14,
+        polygonCoordinates: [
+            [52.096068471897375,23.760651535846776],
+            [52.096201805815454,23.761434315161537],
+            [52.096126640988096,23.761472536639996],
+            [52.09610681727615,23.76153422744735],
+            [52.09543315057537,23.761835794713495],
+            [52.0954021755376,23.76179757323504],
+            [52.095265690951855,23.761070406058064],
+            [52.096068471897375,23.760651535846776]
+        ],
+        name: 'Парковка №3',
+        textCoordinates: [52.09573246630966,23.761270913246236],
+        fillColor: '#808080',
+        strokeColor: '#444444',
+        offset: [0,0],
+        markerTemplate: 'islands#grayStretchyIcon'
+    },
+    {
+        id: 15,
+        polygonCoordinates: [
+            [52.09778951528196,23.759956519393256],
+            [52.09802838453831,23.76137522571337],
+            [52.09651635585424,23.762112257350413],
+            [52.09634663403593,23.761202411002312],
+            [52.09643997009805,23.76062694944438],
+            [52.09778951528196,23.759956519393256]
+        ],
+        name: 'Стадион',
+        textCoordinates: [52.097149042058945,23.76108560718589],
+        fillColor: '#d3811555',
+        strokeColor: '#d38115',
+        offset: [0,0],
+        markerTemplate: 'islands#orangeStretchyIcon'
+    },
+    {
+        id: 16,
+        polygonCoordinates: [
+            [52.09422945881198,23.760015804548487],
+            [52.09435175213908,23.76065493477244],
+            [52.09409327703843,23.760787068917335],
+            [52.09397192127716,23.76014471520943],
+            [52.09422945881198,23.760015804548487]
+        ],
+        name: 'ТЦ "Зодчие"',
+        textCoordinates: [52.09416826578735,23.760414355226644],
+        fillColor: '#e8e53355',
+        strokeColor: '#c4c22b',
+        offset: [0,0],
+        markerTemplate: 'islands#yellowStretchyIcon'
+    },
+    {
+        id: 17,
+        polygonCoordinates: [
+            [52.09672690637777,23.7595174864868],
+            [52.096796081867645,23.75951945408721],
+            [52.09699343022129,23.75941449952812],
+            [52.09712168331967,23.760050370287242],
+            [52.09649513698017,23.76035717609427],
+            [52.09636372487065,23.759706302831],
+            [52.09672690637777,23.7595174864868]
+        ],
+        name: 'Игровая площадка',
+        textCoordinates: [52.09673508058623,23.759923402035138],
+        fillColor: '#d3811555',
+        strokeColor: '#d38115',
+        offset: [0,0],
+        markerTemplate: 'islands#orangeStretchyIcon'
+    },
+    {
+        id: 18,
+        polygonCoordinates: [
+            [52.096339101265336,23.759822348070013],
+            [52.09595666909071,23.759984621715503],
+            [52.09634075323284,23.76030514569277],
+            [52.09641756966248,23.760271618080044],
+            [52.096339101265336,23.759822348070013] 
+        ],
+        name: 'Игровая площадка',
+        textCoordinates: [52.09625512218848,23.760081944208203],
+        fillColor: '#d3811555',
+        strokeColor: '#d38115',
+        offset: [0,0],
+        markerTemplate: 'islands#orangeStretchyIcon'
+    },
 ]
 
 var categoriesIsVisible = {
@@ -304,12 +671,10 @@ var categoriesIsVisible = {
     deans: false
 };
 
-var placesIsVisible = false;
-
 function init() {
     const myMap = new ymaps.Map("map", {
         center: [52.095648, 23.758507],
-        zoom: 17	
+        zoom: 18	
     });
 
     myMap.controls.remove('searchControl'); // удаляем поиск
@@ -322,11 +687,10 @@ function init() {
 
 
     function showMarkers(category) {
-        
         if (categoriesIsVisible[category]) {
             categoriesData[category].forEach((item) => {
                 myMap.geoObjects.each((geoObject) => {
-                    if (geoObject.geometry.getCoordinates()[0] === item.lat && geoObject.geometry.getCoordinates()[1] === item.lon) {
+                    if (geoObject.geometry && geoObject.geometry.getCoordinates()[0] === item.lat && geoObject.geometry.getCoordinates()[1] === item.lon) {
                         myMap.geoObjects.remove(geoObject);
                     }
                 });
@@ -347,7 +711,6 @@ function init() {
                     iconImageOffset: [0, 0]
                 }
                 );
-
                 myMap.geoObjects.add(placemark);
             });
             categoriesIsVisible[category] = true;
@@ -367,67 +730,175 @@ function init() {
         showMarkers(category);
     }
 
-    var addedPolygons = [];
-    var addedLayouts = [];
+    const polygonManager = new ymaps.ObjectManager();
+    myMap.geoObjects.add(polygonManager);
+    
+    const pathManager = new ymaps.ObjectManager();
+    myMap.geoObjects.add(pathManager);
 
-    var customLayout = ymaps.templateLayoutFactory.createClass(
-        '<text style="color: #484646;">$[properties.iconContent]</text>'
-    );
+    const inputsManager = new ymaps.ObjectManager();
+    myMap.geoObjects.add(inputsManager);
 
     document.getElementById('togglePolygons').addEventListener('change', function() {
         if (this.checked) {
-            polygonData.forEach((item) => {
-                var myGeoObject = new ymaps.GeoObject({
+            pathsData.forEach((item) => {
+                pathManager.add({
+                    type: 'Feature',
+                    id: item.id,
                     geometry: {
-                        type: "Polygon",
+                        type: 'LineString', 
+                        coordinates: item.coordinates,
+                    },
+                    properties: {
+                    },
+                    options: {
+                        strokeColor: "#964b00",
+                        strokeWidth: 2,
+                        strokeStyle: [5, 2]
+                    }
+                });
+            });
+
+
+            
+            const customBalloonLayout = ymaps.templateLayoutFactory.createClass(
+                '<div class="custom-balloon">' +
+                '<h3 class="custom-balloon-header">$[properties.balloonContentHeader]</h3>' +
+                '<div class="custom-balloon-content">' +
+                '<form>' +
+                '<label for="imageSelect">Выберите этаж:</label>' +
+                '<select id="floorSelect">' +
+                '<option value="text">Выберите этаж</option>' +
+                '<option value="1 этаж.jpg">Этаж 1</option>' +
+                '<option value="2 этаж.jpg">Этаж 2</option>' +
+                '<option value="3 этаж.jpg">Этаж 3</option>' +
+                '<option value="4 этаж.jpg">Этаж 4</option>' +
+                '<option value="5 этаж.jpg">Этаж 5</option>' +
+                // Добавьте другие варианты этажей по мере необходимости
+                '</select>' +
+                '<br>' +
+                '<img id="selectedImage" src="" alt="Selected Image">' +
+                '</form>' +
+                '</div>' +
+                '</div>', {
+                build: function () {
+                    // Вызывается при создании макета балуна
+                    // Получаем ссылку на макет
+                    customBalloonLayout.superclass.build.call(this);
+            
+                    // Находим элементы в DOM
+                    this._floorSelect = document.getElementById('floorSelect');
+                    this._selectedImage = document.getElementById('selectedImage');
+            
+                    // Подписываемся на событие изменения выбранного значения в списке
+                    this._floorSelect.addEventListener('change', this._onFloorSelectChange.bind(this));
+                },
+            
+                clear: function () {
+                    // Вызывается при удалении макета балуна
+                    // Отписываемся от события
+                    this._floorSelect.removeEventListener('change', this._onFloorSelectChange.bind(this));
+            
+                    // Вызываем метод clear родительского класса
+                    customBalloonLayout.superclass.clear.call(this);
+                },
+            
+                _onFloorSelectChange: function () {
+                    // Обработчик изменения выбранного значения в списке
+                    const selectedValue = this._floorSelect.value;
+            
+                    if (selectedValue === 'text') {
+                        // Если выбран текст "Выберите этаж", скрываем изображение
+                        this._selectedImage.style.display = 'none';
+                    } else {
+                        // Иначе, отображаем изображение соответствующего этажа
+                        this._selectedImage.style.display = 'block';
+                        this._selectedImage.src = selectedValue;
+                    }
+                }
+            });
+            
+            const customBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<style>.custom-balloon-content { background-color: white; }</style>' +
+                '<h3 class="custom-balloon-header">$[properties.balloonContentHeader]</h3>' +
+                '<div class="custom-balloon-content">' +
+                'Дополнительный текст балуна: $[properties.balloonContent]' +
+                '</div>'
+            );
+            
+            
+            
+                
+
+
+
+
+
+            polygonData.forEach((item) => {
+                polygonManager.add({
+                    type: 'Feature',
+                    id: item.id,
+                    geometry: {
+                        type: 'Polygon',
                         coordinates: [
                             item.polygonCoordinates,
                             []
                         ],
-                        fillRule: "nonZero"
+                        fillRule: 'nonZero'
                     },
-                    properties:{
+                    properties: {
                         balloonContentHeader: item.name,
-                        hintContent: item.name
-                    }
-                }, {
-                    fillColor: item.fillColor,
-                    strokeColor: item.strokeColor,
-                    opacity: 0.75,
-                    strokeWidth: 2,
-                    strokeStyle: 'shortdash'
-                });
-                
-                var myLabel = new ymaps.Placemark(
-                    item.textCoordinates,
-                    {
-                        iconContent: item.name,
+                        hintContent: item.name,
+                        labelContent: item.name
                     },
-                    {
-                        preset: item.markerTemplate,
-                        //iconLayout: customLayout,
-                        //iconOffset: item.offset
+                    options: {
+                        fillColor: item.fillColor,
+                        strokeColor: item.strokeColor,
+                        opacity: 0.75,
+                        strokeWidth: 3,
+                        strokeStyle: 'solid',
+                        labelDefaults: 'dark',
+                        labelLayout: '<div style="color: #1c65e8;">$[properties.labelContent]</div>',
+                        labelPermissibleInaccuracyOfVisibility: 22,
+                        balloonLayout: customBalloonLayout,
+                        balloonContentLayout: customBalloonContentLayout
                     }
-                );
-
-                addedLayouts.push(myLabel);
-                myMap.geoObjects.add(myLabel);
-
-                addedPolygons.push(myGeoObject);
-                myMap.geoObjects.add(myGeoObject);
+                });
             });
+
+            const polylabel = new ymaps.polylabel.create(myMap, polygonManager);
+
+            inputsData.forEach((item) => {
+                inputsManager.add({
+                    type: 'Feature',
+                    id: item.id,
+                    geometry: {
+                        type: 'Point',
+                        coordinates: item.coordinates
+                    },
+                    properties: {
+                        balloonContentHeader: item.name,
+                        hintContent: item.name,
+                        labelContent: item.name
+                    },
+                    options: {
+                        iconLayout: 'default#image',
+                        iconImageHref: 'https://cdn-icons-png.flaticon.com/128/1427/1427060.png',
+                        iconImageSize: [20, 20],
+                        iconImageOffset: item.offset
+                    }
+                });
+            });
+
         } else {
-            addedPolygons.forEach((polygon) => {
-                myMap.geoObjects.remove(polygon);
-            });
-            addedPolygons = [];
+            polygonManager.removeAll();
+            //polygonManager.objects.remove(polygonManager.objects.getById('1'));
+            pathManager.removeAll();
+            inputsManager.removeAll();
 
-            addedLayouts.forEach((layout) => {
-                myMap.geoObjects.remove(layout);
-            });
-            addedLayouts = [];
         }
     });
+    
 };
 
-ymaps.ready(init);
+ymaps.ready(['polylabel.create']).then(init);
