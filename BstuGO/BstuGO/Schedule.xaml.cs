@@ -151,13 +151,20 @@ namespace BstuGO
         {
             if (getFaculty() != "" && getCourse() != "")
             {
-                var httpClient = new HttpClient(ServerConn.GetInsecureHandler());
-                var stream = await httpClient.GetStreamAsync($"https://194.87.237.231/{getFaculty() + getCourse()}");
-                using (var memoryStream = new MemoryStream())
+                try
                 {
-                    await stream.CopyToAsync(memoryStream);
-                    await CrossXamarinFormsSaveOpenPDFPackage.Current.SaveAndView(getFaculty() + getCourse(), "application/pdf", memoryStream, PDFOpenContext.InApp);
+                    var httpClient = new HttpClient(ServerConn.GetInsecureHandler());
+                    var stream = await httpClient.GetStreamAsync($"https://194.87.237.231/{getFaculty() + getCourse()}");
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await stream.CopyToAsync(memoryStream);
+                        await CrossXamarinFormsSaveOpenPDFPackage.Current.SaveAndView(getFaculty() + getCourse(), "application/pdf", memoryStream, PDFOpenContext.InApp);
+                    }
+                }catch (Exception ex)
+                {
+
                 }
+                
             }
           
         }
