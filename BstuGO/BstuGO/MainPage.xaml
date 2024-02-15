@@ -21,26 +21,12 @@
     <StackLayout>
 
         <!--РАСПИСАНИЕ ЗАНЯТИЙ-->
-        <Button Text = "Расписание занятий" 
+        <Button Text = "add user" 
             BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" TextColor="#FFFFFF" 
             CharacterSpacing="1" HorizontalOptions="FillAndExpand"  CornerRadius="13" 
             Margin="30, 50, 30, 25" Clicked="Schedule_Class_Button" />
 
-        <!--РАСПИСАНИЕ ПРЕПОДАВАТЕЛЕЙ-->
-        <!--<Button Text = "Расписание преподавателей" BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" 
-TextColor="#FFFFFF" CharacterSpacing="1" HorizontalOptions="FillAndExpand"  CornerRadius="13" 
-Margin="25" Clicked="Schedule_Class_Button" />-->
-
-        <!--КАРТЫ-->
-        <Button Text = "Карты" 
-            BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" TextColor="#FFFFFF" 
-            CharacterSpacing="1" HorizontalOptions="FillAndExpand"  CornerRadius="13" 
-            Margin="30,25" Clicked="Maps_Button_Clicked" />
-
-        <!--НОВОСТИ-->
-        <Button Text = "Новости" BackgroundColor="#2196f3" FontSize="25" FontAttributes="Bold" TextColor="#FFFFFF" 
-            CharacterSpacing="1" HorizontalOptions="FillAndExpand"  CornerRadius="13" 
-            Margin="30,25" Clicked="News_Button" />
+        
 
     </StackLayout>
 

@@ -12,7 +12,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
-           
+            <Button Text="CLICLLC" Clicked="LoadPdfButton_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

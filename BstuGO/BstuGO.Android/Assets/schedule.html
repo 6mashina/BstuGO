@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <!-- Подключение стилей и скрипта библиотеки PDF.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf_viewer.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.js"></script>
+    <!-- Стили для контейнера просмотрщика PDF -->
+    <style>
+        /* Стили для контейнера с просмотрщиком PDF */
+        #pdf-viewer {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+        /* Стили для кнопок просмотрщика PDF */
+        .pdf-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Контейнер для просмотрщика PDF -->
+    <div id="pdf-viewer">
+        
+    </div>
+
+    <script>
+        var pdfDocument = null;
+        var pdfPage = null;
+        var pdfViewer = document.getElementById('pdf-viewer');
+
+        // Функция для загрузки и отображения PDF файла
+       function loadPDF(url) {
+            // Загрузка PDF файла
+            pdfjsLib.getDocument(url).promise.then(function(pdf) {
+                // Отображение первой страницы PDF файла
+                pdf.getPage(1).then(function(page) {
+                    var scale = 1.5;
+                    var viewport = page.getViewport({ scale: scale });
+
+                    // Создание canvas элемента для отображения PDF страницы
+                    var canvas = document.createElement('canvas');
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    // Отображение PDF страницы на canvas элементе
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext);
+
+                    // Добавление canvas элемента в контейнер просмотрщика
+                    var pdfViewer = document.getElementById('pdf-viewer');
+                    pdfViewer.appendChild(canvas);
+                });
+            });
+        }
+
+        // Функция для отображения определенной страницы PDF файла
+       
+
+        // Функции для управления зумом
+        function zoomIn() {
+            if (pdfPage) {
+                renderPage(pdfPage.pageIndex + 1);
+            }
+        }
+
+        function zoomOut() {
+            if (pdfPage) {
+                renderPage(pdfPage.pageIndex - 1);
+            }
+        }
+
+        // Функции для вращения страницы
+        function rotateRight() {
+            if (pdfPage) {
+                renderPage(pdfPage.pageIndex + 1);
+            }
+        }
+
+        function rotateLeft() {
+            if (pdfPage) {
+                renderPage(pdfPage.pageIndex - 1);
+            }
+        }
+
+        // Функция для загрузки PDF файла
+        function downloadPDF() {
+            if (pdfDocument) {
+                pdfDocument.getData().then(function(data) {
+                    var blob = new Blob([data], { type: 'application/pdf' });
+                    var url = window.URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'document.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                });
+            }
+        }
+
+        // Вызов функции загрузки PDF файла
+        loadPDF('https://194.87.237.231/get_schedule');
+    </script>
+</body>
+</html>

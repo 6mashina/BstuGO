@@ -1,4 +1,6 @@
-﻿using BstuGO.views;
+﻿using BstuGO.models;
+using BstuGO.services;
+using BstuGO.views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +13,7 @@ namespace BstuGO
 {
     public partial class MainPage : ContentPage
     {
+        DBServices dBServices = new DBServices();
         public MainPage()
         {
             InitializeComponent();
@@ -24,7 +27,24 @@ namespace BstuGO
 
         private async void Schedule_Class_Button(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Schedule());
+            /*System.Console.WriteLine(await dBServices.AddUserAsync("sasha"));
+             await dBServices.GetHelloMessageAsync();*/
+
+            User user = new User
+            {
+                Email = "aaasdggda",
+                Course = "1",
+                Faculty = "asdads",
+                FirstName = "asda",
+                GradebookNumber = "1",
+                Specialization = "1",
+                LastName = "1",
+                Password = "1asdfasdf",
+                Role = "1",
+                Gender = "1"
+              
+            };
+            await dBServices.AddUser(user);
         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)

@@ -14,9 +14,14 @@
   <ItemGroup>
     <PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
     <PackageReference Include="FirebaseDatabase.net" Version="4.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.32" />
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="24.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.3.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms.SaveOpenPDFPackage" Version="1.0.0" />
+    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.41" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,7 +46,19 @@
     <EmbeddedResource Update="views\Maps.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="views\PdfViewerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\ProfileChangePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="views\RegisterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\RegisterPage_2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\ResetPasswordPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
