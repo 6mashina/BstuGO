@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:tt="clr-namespace:TouchTracking.Forms;assembly=TouchTracking.Forms"
              x:Class="BstuGO.Schedule">
+    
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <Label Text="Расписание" TextColor="#FFFFFF" FontSize="30" FontAttributes="Bold" Padding="1,1,1,1" />
@@ -11,8 +14,63 @@
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="CLICLLC" Clicked="LoadPdfButton_Clicked"></Button>
-        </StackLayout>
+        <Grid BackgroundColor="White">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid x:Name="settings"
+                  Grid.Row="0"
+                  Padding="5" >
+                <Grid x:Name="first"
+                      Grid.Row="0"/>
+                <Grid x:Name="second"
+                      Grid.Row="1"/>
+                <Grid x:Name="third"
+                      Grid.Row="2"/>
+                <Grid x:Name="fourth"
+                      Grid.Row="3"/>
+                <Grid x:Name="fifth"
+                      Grid.Row="4"/>
+                <Grid x:Name="six"
+                      Grid.Row="5"/>
+
+
+            </Grid>
+
+            <Grid x:Name="CanvasViewHost"
+                Grid.Row="1"
+                 Padding="5" >
+
+                <skia:SKCanvasView x:Name="canvasView"
+                                   PaintSurface="OnCanvasViewPaintSurface" />
+
+
+                <Grid.Effects>
+                    <tt:TouchEffect Capture="True" 
+                    TouchAction="OnTouchEffectAction" />
+                </Grid.Effects>
+            </Grid>
+
+
+
+            <Grid x:Name="CanvasViewHost2"
+                  IsVisible="False"
+                  Grid.Row="2"
+                  Padding="5" >
+
+
+
+               
+            </Grid>
+
+
+
+
+
+
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

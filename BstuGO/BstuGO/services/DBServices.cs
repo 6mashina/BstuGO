@@ -10,7 +10,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Net.Http;
 using Newtonsoft.Json;
-
+using SkiaSharp;
 
 namespace BstuGO.services
 {
@@ -22,6 +22,19 @@ namespace BstuGO.services
         public DBServices() 
         {
           
+        }
+
+        public async Task<SKBitmap> getImage(string adr)
+        {
+            var httpClient = new HttpClient(ServerConn.GetInsecureHandler());
+            var stream = await httpClient.GetStreamAsync($"{BaseUrl + adr}");
+            using (MemoryStream memStream = new MemoryStream())
+            {
+                await stream.CopyToAsync(memStream);
+                memStream.Seek(0, SeekOrigin.Begin);
+                return SKBitmap.Decode(memStream);
+
+            };
         }
         public async Task<User> getUser(string email)
         {

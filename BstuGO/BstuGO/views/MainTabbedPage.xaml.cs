@@ -1,10 +1,13 @@
-﻿using System;
+﻿using BstuGO.services;
+using SkiaSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace BstuGO.views
@@ -12,12 +15,16 @@ namespace BstuGO.views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainTabbedPage : TabbedPage
     {
+        DBServices services = new DBServices();
+        SKBitmap image;
         public MainTabbedPage (bool isGhost)
         {
             InitializeComponent();
 
+          
+
             NavigationPage mapsPage = new NavigationPage(new Maps());
-            NavigationPage schedulesPage = new NavigationPage(new Schedule());
+            NavigationPage schedulesPage = new NavigationPage(new Schedule(image));
             NavigationPage newsPage = new NavigationPage(new NewsPage());
             NavigationPage profilesPage = new NavigationPage(new ProfilePage());
 
@@ -50,5 +57,6 @@ namespace BstuGO.views
         {
             return true;
         }
+    
     }
 }

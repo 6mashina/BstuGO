@@ -13,7 +13,7 @@
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <StackLayout>
+    <StackLayout BackgroundColor="White">
 
         <!--  <Label 
             x:Name="userNameLabel"
