@@ -1,81 +1,120 @@
 ﻿using BstuGO.models;
-using Firebase.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Firebase.Database.Query;
-using Firebase.Auth;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Runtime.CompilerServices;
+using System.Net.Http;
+using Newtonsoft.Json;
+using SkiaSharp;
 
 namespace BstuGO.services
 {
-    internal class DBServices
+    public class DBServices
     {
-        FirebaseClient client;
-        FirebaseAuthProvider authProvider;
-        string WebApiKey = "AIzaSyD1zRE3Zsu6RA3s-aVZqnvoXBxWv_pSifA";
-        public DBServices()
+        private const string BaseUrl = "https://194.87.237.231";
+       
+
+        public DBServices() 
         {
-            client = new FirebaseClient("https://bstugo-2878e-default-rtdb.europe-west1.firebasedatabase.app/");
-            authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebApiKey));
+          
         }
 
-
-        public async Task<bool> Register(string email,string password)
+        public async Task<SKBitmap> getImage(string adr)
         {
-            var token = await authProvider.CreateUserWithEmailAndPasswordAsync(email,password);
-            if (!string.IsNullOrEmpty(token.FirebaseToken))
+            var httpClient = new HttpClient(ServerConn.GetInsecureHandler());
+            var stream = await httpClient.GetStreamAsync($"{BaseUrl + adr}");
+            using (MemoryStream memStream = new MemoryStream())
             {
-                return true;
-            }
-            return false;
-        }
+                await stream.CopyToAsync(memStream);
+                memStream.Seek(0, SeekOrigin.Begin);
+                return SKBitmap.Decode(memStream);
 
-        public async Task<string> SignIn(string email, string password)
-        {
-            var token = await authProvider.SignInWithEmailAndPasswordAsync(email, password);
-            if (!string.IsNullOrEmpty(token.FirebaseToken))
-            {
-                return token.FirebaseToken;
-            }
-            return "";
-        }
-
-        public async Task addUsers(string login,string password)
-        {
-            models.User user = new models.User()
-            {
-                Login = login,
-                Password = password
             };
-            await client.Child("Users").PostAsync(user);
-            
         }
-
-        
-        public async Task addStudents(string course,string email)
+        public async Task<User> getUser(string email)
         {
-            models.Student std = new models.Student()
+            User user = null;
+            var url = $"{BaseUrl}/get_user?email={email}";
+            try
             {
-                Course = course,
-                Email = email
-            };
-            await client.Child("Students").PostAsync(std);
-
+                string jsonObject = await ServerConn.getData(url);
+                if (jsonObject.Contains("User not found")) {
+                    return user;
+                }
+                user = JsonConvert.DeserializeObject<User>(jsonObject);
+                return user;
+            }
+            catch (Exception ex)
+            {
+               
+            }
+            return user;
         }
-        public async Task<Student> GetStudent(string email)
+
+        public async Task<string> deleteUser(string email)
+        {
+            var url = $"{BaseUrl}/delete_user?email={email}";
+            try
+            {
+                return await ServerConn.postData(url, email);
+
+            }
+            catch (Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
+        }
+        public async Task<string> AddUser(User user)
+        {
+            var url = $"{BaseUrl}/register";
+            try
+            {
+             return await ServerConn.postData(url,user);
+
+            }
+            catch (Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
+        }
+        public async Task<string> AuthUser(User user)
         {
 
-            var student = (await client.Child("Students").OnceAsync<Student>())
-                .FirstOrDefault(s => s.Object.Email == email)?.Object;
-           
-            return student;
+            var url = $"{BaseUrl}/auth";
+            try
+            {
+                return await ServerConn.postData(url,user);
+            }
+            catch (Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
         }
-        
+
+        public async Task<string> uploadUser(User user)
+        {
+            var url = $"{BaseUrl}/upload_user";
+            try
+            {
+                return await ServerConn.postData(url, user);
+            }
+            catch (Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
+        }
+
+       
+
+
+
+
+
+
     }
 }

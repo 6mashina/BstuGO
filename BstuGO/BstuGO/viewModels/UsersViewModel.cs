@@ -26,12 +26,9 @@ namespace BstuGO.viewModels
         
             services = new DBServices();
 
-            AddUserCommand = new Command(async () => await AddUser(Login,Password));
+            
         }
 
-        public async Task AddUser(string login, string password)
-        {
-            await services.addUsers(login, password);
-        }
+        
     }
 }

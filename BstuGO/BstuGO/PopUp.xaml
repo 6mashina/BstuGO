@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<popup:PopupPage
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="BstuGO.PopUp">
+
+
+
+    <Frame CornerRadius="10" Padding="0" WidthRequest="400" HeightRequest="300"  HorizontalOptions="Center"  VerticalOptions="Center" Margin="20" >
+        <StackLayout>
+            <Label Text="Выберите факультет" HorizontalOptions="Start" Margin="20"/>
+                <Picker x:Name="facultyPicker" Title="Факультет" />
+                <Label Text="Выберите курс" HorizontalOptions="Start" Margin="20"/>
+                <Picker x:Name="coursePicker" Title="Курс" />
+                <Button Text="OK" HorizontalOptions="End" VerticalOptions="End" Clicked="OnButtonClicked"/>
+            </StackLayout>
+        </Frame>
+
+
+</popup:PopupPage>

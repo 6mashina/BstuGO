@@ -23,66 +23,104 @@ namespace BstuGO.views
 			InitializeComponent ();
 		}
 
-        private async void btnReg_Clicked(object sender, EventArgs e)
+
+        private async void AddRegisterPage_2(object sender, EventArgs e)
         {
-			try
-			{
-
-                string email = UserEmailEntry.Text;
-                string password = PasswordEntry.Text;
-                string replyPassword = repeatPasswordEntry.Text;
-                string name = UserNamelEntry.Text;
-
-
-                if (!replyPassword.Equals(password))
-                {
-                    await DisplayAlert("Регистрация", "Повторный пароль не совпадает с основным", "OK");
-                }
-                else
-                {
-                    await services.addStudents(coursePicker,email);
-                    
-                    bool isSave = await services.Register(email, password);
-                    if (isSave)
-                    {
-                        await DisplayAlert("Регистрация", "Регистрация завершена успешно", "ok");
-                    }
-                }
-                
+            User user = new User();
+            if (string.IsNullOrEmpty(FirstNameEntry.Text) || string.IsNullOrEmpty(LastNameEntry.Text) //|| string.IsNullOrEmpty(UserNameEntry.Text)
+                || (maleGenger.IsChecked == false && femaleGenger.IsChecked == false) || (teacherStatus.IsChecked == false && studentStatus.IsChecked == false))
+            {
+                await DisplayAlert("Регистрация", "Заполните все данные", "Ok");
+                CheckEmptyFields();
             }
-            catch(Exception ex)
-			{
-                if (ex.Message.Contains("EMAIL_EXISTS"))
+            else
+            {
+                user.FirstName = FirstNameEntry.Text.Trim();
+                user.LastName = LastNameEntry.Text.Trim();
+             
+                if (maleGenger.IsChecked)
                 {
-                    await DisplayAlert("Регистрация", "Данный email уже зарегистрован", "OK");
-                }else if (ex.Message.Contains("WEAK_PASSWORD"))
-                {
-                    await DisplayAlert("Регистрация", "Пароль должен быть больше или равен 6 символам", "OK");
-                }else if (ex.Message.Contains("Object reference"))
-                {
-                    await DisplayAlert("Регистрация", "Введите данные!","ОК");
+                    user.Gender = "male";
                 }
                 else
                 {
-                    await DisplayAlert("Регистрация", ex.Message, "OK");
+                    user.Gender = "female";
                 }
-               
+
+                if (teacherStatus.IsChecked)
+                {
+                    user.Role = "teacher";
+                }
+                else
+                {
+                    user.Role = "student";
+                }
+
+                await Navigation.PushAsync(new RegisterPage_2(user));
+            }
+
+        }
+        private void CheckEmptyFields()
+        {
+            if (string.IsNullOrEmpty(FirstNameEntry.Text))
+            {
+                FirstNameEntry.BorderColor = Color.Red;
+                label_1.IsVisible = true;
+
+            }
+            else
+            {
+                label_1.IsVisible = false;
+            }
+
+            if (string.IsNullOrEmpty(LastNameEntry.Text))
+            {
+                LastNameEntry.BorderColor = Color.Red;
+                label_2.IsVisible = true;
+            }
+            else
+            {
+                label_2.IsVisible = false;
+            }
+
+            /*            if (string.IsNullOrEmpty(UserNameEntry.Text))
+                        {
+                            UserNameEntry.BorderColor = Color.Red;
+                            label_3.IsVisible = true;
+                        }
+                        else
+                        {
+                            label_3.IsVisible = false;
+                        }*/
+
+            if ((maleGenger.IsChecked == false && femaleGenger.IsChecked == false))
+            {
+                label_4.IsVisible = true;
+            }
+            else
+            {
+                label_4.IsVisible = false;
+            }
+
+            if ((teacherStatus.IsChecked == false && studentStatus.IsChecked == false))
+            {
+                label_5.IsVisible = true;
+            }
+            else
+            {
+                label_5.IsVisible = false;
             }
         }
-
+      
         private async void Label_Tapped(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new LoginPage());
         }
-
-        private void facultyPicker_SelectedIndexChanged(object sender, EventArgs e)
+        private async void backToLoginPage(object sender, EventArgs e)
         {
-
+            await Navigation.PopAsync();
         }
 
-        private void coursePicker_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            coursePicker = picker.Items[picker.SelectedIndex];
-        }
+
     }
 }
