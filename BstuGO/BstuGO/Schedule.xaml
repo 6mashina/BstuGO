@@ -21,10 +21,7 @@
             Text="Изменить"
             Clicked="ShowPopUp"
             Order="Secondary"/>
-        <ToolbarItem
-            Text="Расписание"
-            Clicked="LoadPdfButton_Clicked"
-            Order="Secondary"/>
+
         <ToolbarItem
             Text="Вырезать"
             Clicked="ButtonCropperClicked"
@@ -33,7 +30,7 @@
 
 
     <ContentPage.Content>
-        <StackLayout >
+        <StackLayout x:Name="stl">
             <Grid x:Name="CanvasViewHost" Padding="5" IsVisible="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -49,7 +46,9 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
                 </Grid.RowDefinitions>
+
 
             </Grid>
 

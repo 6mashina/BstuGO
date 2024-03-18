@@ -34,12 +34,14 @@ namespace BstuGO
     {
         Picker facultyPicker;
         Picker coursePicker;
+        
         Label header;
         Label header2;
         Button buttonGetShedule;
         Button buttonPhotoCropper;
         string pickFaculty = "";
         string pickCourse = "";
+        string email = Preferences.Get("email","");
         SKBitmap bitmap = new SKBitmap();
         SKBitmap croppedBitmap;
         SKMatrix matrix = SKMatrix.MakeIdentity();
@@ -53,6 +55,7 @@ namespace BstuGO
 
         public async Task getImage()
         {
+            
             /*string email = Preferences.Get("email", "");
             User user = await services.getUser(email);*/
             var httpClient = new HttpClient(ServerConn.GetInsecureHandler());
@@ -185,16 +188,23 @@ namespace BstuGO
         void ButtonCropperClicked(Object sender, EventArgs args)
         {
             CanvasViewHost.IsVisible = false;
-            if (photoCropper == null)
-            {
-                photoCropper = new PhotoCropperCanvasView(bitmap);
-                CanvasViewHost2.Children.Add(photoCropper, 0, 0);
-                CanvasViewHost2.Children.Add(buttonOnDone, 0, 1);
-            }
+            CanvasViewHost2.Children.Clear();
             CanvasViewHost2.IsVisible = true;
-            canvasView.InvalidateSurface();
+
+            photoCropper = new PhotoCropperCanvasView(bitmap);
+            buttonOnDone = new Button
+            {
+                Text = "Готово"
+            };
+            buttonOnDone.Clicked += OnDoneButtonClicked;
+            
+            CanvasViewHost2.Children.Add(photoCropper, 0, 0);
+            CanvasViewHost2.Children.Add(buttonOnDone, 0, 1);
+           
+           
         }
 
+      
         void OnDoneButtonClicked(object sender, EventArgs args)
         {
             CanvasViewHost.IsVisible = true;
@@ -210,7 +220,11 @@ namespace BstuGO
         public Schedule(SKBitmap image)
         {
        
+
+
             InitializeComponent();
+
+            
 
             buttonGetShedule = new Button
             {
@@ -225,11 +239,8 @@ namespace BstuGO
             };
             buttonPhotoCropper.Clicked += ButtonCropperClicked;
 
-            buttonOnDone = new Button
-            {
-                Text = "done"
-            };
-            buttonOnDone.Clicked += OnDoneButtonClicked;
+           
+            
             canvasView.InvalidateSurface();
 
         }
@@ -296,12 +307,13 @@ namespace BstuGO
         }
         private async void LoadPdfButton_Clicked(object sender, EventArgs e)
         {
-            if (getFaculty() != "" && getCourse() != "")
-            {
-                try
+          
+
+            
+               /* try
                 {
                     var httpClient = new HttpClient(ServerConn.GetInsecureHandler());
-
+                    Console.WriteLine(pickFaculty + pickCourse);
                     //var stream = await httpClient.GetStreamAsync($"https://194.87.237.231/{getFaculty() + getCourse()}");
                     var stream = await httpClient.GetStreamAsync($"https://194.87.237.231/feis2.png");
                     using (MemoryStream memStream = new MemoryStream())
@@ -318,9 +330,9 @@ namespace BstuGO
                 catch (Exception ex)
                 {
 
-                }
+                }*/
 
-            }
+           
 
         }
  
@@ -328,14 +340,14 @@ namespace BstuGO
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
-            await getImage();
+            services = new DBServices();
+            bitmap = await services.getImage($"/ФЭИС1.png");
 
         }
         private async void ShowPopUp(object sender, EventArgs e)
         {
-            var popupPage = new PopUp(pickFaculty, pickCourse);
-            popupPage.ButtonClicked += ButtonCropperClicked;
+            var popupPage = new PopUp();
+            popupPage.ValueBitmap += GetBitmap;
             popupPage.ValueSelectedFaculty += OnTableFacultyValueSelected;
             popupPage.ValueSelectedCourse += OnTableCourseValueSelected;
 
@@ -352,6 +364,13 @@ namespace BstuGO
         {
             pickCourse = selectedCourse;
             // Действия с выбранным значением элемента course
+        }
+
+        private async void GetBitmap(object sender,SKBitmap bitmap)
+        {
+            this.bitmap = bitmap;
+            Console.WriteLine("new bitmap");
+            canvasView.InvalidateSurface();
         }
     }
 }

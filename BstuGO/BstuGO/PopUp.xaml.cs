@@ -1,8 +1,11 @@
-﻿using Rg.Plugins.Popup.Services;
-
+﻿using BstuGO.services;
+using Rg.Plugins.Popup.Services;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,11 +19,15 @@ namespace BstuGO
     public partial class PopUp : Rg.Plugins.Popup.Pages.PopupPage
     {
         public delegate void ButtonClickedHandler(object sender, EventArgs e);
-        public event ButtonClickedHandler ButtonClicked;
+       
 
         public event EventHandler<string> ValueSelectedFaculty;
+        public event EventHandler<SKBitmap> ValueBitmap;
         public event EventHandler<string> ValueSelectedCourse;
-        public PopUp(string selectedFaculty, string selectedCourse)
+
+        DBServices services;
+        
+        public PopUp()
         {
 
             InitializeComponent();
@@ -31,21 +38,36 @@ namespace BstuGO
             facultyPicker.Items.Add("ЭФ");
             facultyPicker.Items.Add("МСФ");
 
-            coursePicker.Items.Add("1");
-            coursePicker.Items.Add("2");
-            coursePicker.Items.Add("3");
-            coursePicker.Items.Add("4");
 
-            facultyPicker.SelectedItem = selectedFaculty;
-            facultyPicker.SelectedIndexChanged += OnTableFacultySelectedIndexChanged;
+            
 
-            coursePicker.SelectedItem = selectedCourse;
+            facultyPicker.SelectedIndexChanged += OnTableFacultySelectedIndexChanged; 
             coursePicker.SelectedIndexChanged += OnTableCourseSelectedIndexChanged;
 
         }
         private void OnTableFacultySelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedOption1 = facultyPicker.SelectedItem as string;
+
+            switch (selectedOption1) {
+                case "ФЭИС":
+                    coursePicker.ItemsSource = new string[] { "1", "2", "3", "4" };
+                    break;
+                case "ФИСЕ":
+                    coursePicker.ItemsSource = new string[] { "1","2","3","4","4(ТВ)"}; 
+                    break;
+
+                case "МСФ":
+                    coursePicker.ItemsSource = new string[] { "1","2","3","4","4(ТО)"};
+                    break;
+                case "СФ":
+                    coursePicker.ItemsSource = new string[] { "1-4(А,АД)", "1-3(Н,Д,ДИ,СТ)", "4(Н,СТ)", "1-3(П)" };
+                    break;
+                case "ЭФ":
+                    coursePicker.ItemsSource = new string[] { "1", "2", "3", "3(ЭМ,ЭЛБ)","4(ЭМ,ЭЛБ)"};
+                    break;
+            }
+
             ValueSelectedFaculty?.Invoke(this, selectedOption1);
         }
 
@@ -55,15 +77,15 @@ namespace BstuGO
             ValueSelectedCourse?.Invoke(this, selectedOption2);
         }
 
-        private void OnButtonClicked(object sender, EventArgs e)
+        private async void OnButtonClicked(object sender, EventArgs e)
         {
-            string selectedOption1 = facultyPicker.SelectedItem as string;
-            string selectedOption2 = coursePicker.SelectedItem as string;
-            ValueSelectedFaculty?.Invoke(this, selectedOption1);
-            ValueSelectedCourse?.Invoke(this, selectedOption2);
-            PopupNavigation.Instance.PopAsync();
+            Console.WriteLine(facultyPicker.SelectedItem.ToString() + coursePicker.SelectedItem.ToString());
+            services = new DBServices();
+            SKBitmap bitmap =  await services.getImage($"/{facultyPicker.SelectedItem.ToString() + coursePicker.SelectedItem.ToString()}.png");
+            ValueBitmap?.Invoke(this, bitmap);
+            await PopupNavigation.Instance.PopAsync();
         }
-        private async void ClosePage(object sender, EventArgs e)
+        private void ClosePage(object sender, EventArgs e)
         {
             PopupNavigation.Instance.PopAsync();
         }

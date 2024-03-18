@@ -2,6 +2,7 @@
 using SkiaSharp.Views.Forms;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using TouchTracking;
 using TouchTracking.Forms;
@@ -78,7 +79,21 @@ namespace BstuGO
         protected override void OnParentSet()
         {
             base.OnParentSet();
-            Parent.Effects.Add(touchEffect);
+
+            if (Parent != null)
+            { 
+                var existingEffect = Parent.Effects.FirstOrDefault(e => e is TouchEffect);
+
+                if (existingEffect != null)
+                {
+                    Parent.Effects.Remove(existingEffect);
+                }
+
+               
+                Parent.Effects.Add(touchEffect);
+            }
+
+
         }
 
 
@@ -106,7 +121,7 @@ namespace BstuGO
                     float radius = inverseBitmapMatrix.ScaleX * RADIUS;
                     
                     int cornerIndex = croppingRect.HitTest(bitmapLocation,radius);
-                    Console.WriteLine(cornerIndex.ToString());
+                    //Console.WriteLine(cornerIndex.ToString());
                     if (cornerIndex != -1 && !touchPoints.ContainsKey(args.Id))
                     {
                     TouchPoint touchPoint = new TouchPoint

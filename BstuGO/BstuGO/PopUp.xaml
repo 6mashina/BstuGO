@@ -13,7 +13,7 @@ x:Class="BstuGO.PopUp">
                 <Picker x:Name="facultyPicker" Title="Факультет" />
                 <Label Text="Выберите курс" HorizontalOptions="Start" Margin="20"/>
                 <Picker x:Name="coursePicker" Title="Курс" />
-                <Button Text="OK" HorizontalOptions="End" VerticalOptions="End" Clicked="ClosePage"/>
+                <Button Text="OK" HorizontalOptions="End" VerticalOptions="End" Clicked="OnButtonClicked"/>
             </StackLayout>
         </Frame>
 
