@@ -6,18 +6,18 @@ const categoriesData = {
             name: 'Кофейня 21',
             icon: 'https://cdn-icons-png.flaticon.com/128/3081/3081183.png',
             description: '<p>Местонахождение:</p><p>возле лестницы на 1-ом этаже 2-го корпуса</p>',
-            work_time: '<p>Время работы: Пн-Пт 9:00-18:00</p>',
-            photo: '<img src="https://thumb.tildacdn.com/tild6237-6362-4939-b031-616364343235/-/resize/478x/-/format/webp/photo_2023-03-11_13-.png" width="200" height="250">',
+            work_time: '',
+            photo: '<img src="./images/coffeepoint_2.png" width="200" height="250">',
             hint: 'Кофепоинт'
         },
         {
-            lat: 52.09654087426673,
-            lon: 23.758370426678145,
-            name: 'Кофейный автомат',
+            lat: 52.096605838880684,
+            lon: 23.758070325136046,
+            name: 'Кофейня 21',
             icon: 'https://cdn-icons-png.flaticon.com/128/3081/3081183.png',
-            description: '',
+            description: '<p>Местонахождение:</p><p>возле гардероба по пути в библиотеку </p><p> на 1-ом этаже 1-го корпуса</p>',
             work_time: '',
-            photo: '',
+            photo: '<img src="./images/coffeepoint_1.png" width="200" height="250">',
             hint: 'Кофепоинт'
         },
         {
@@ -25,9 +25,9 @@ const categoriesData = {
             lon: 23.758714500047724,
             name: 'Кофейный автомат',
             icon: 'https://cdn-icons-png.flaticon.com/128/3081/3081183.png',
-            description: '',
+            description: '<p>Местонахождение:</p><p>возле перехода на 2-ом этаже 5-го корпуса</p>',
             work_time: '',
-            photo: '',
+            photo: '<img src="./images/coffeepoint_5.png" width="210" height="270">',
             hint: 'Кофепоинт'
         },
     ],
@@ -35,35 +35,95 @@ const categoriesData = {
         {
             lat: 52.094226839478,
             lon: 23.76053080416939,
-            name: 'Столовая "Зодчие"',
+            name: 'Столовая №16 "Зодчие"',
             icon: 'https://cdn-icons-png.flaticon.com/128/2060/2060777.png',
-            description: '',
-            work_time: '',
-            photo: '',
+            description: 'Студентам скидка 10%',
+            work_time: '<p>Время работы: пн-пт с 11:00 до 18:00; сб,вс - выходной</p>',
+            photo: '<img src="./images/stolovaya_16.jpg" width="310" height="210">',
+            hint: 'Столовая'
+        },
+        {
+            lat: 52.09570644339928,
+            lon: 23.7574211493402,
+            name: 'Столовая №12 (2-й корпус)',
+            icon: 'https://cdn-icons-png.flaticon.com/128/2060/2060777.png',
+            description: 'Студентам скидка 10%',
+            work_time: '<p>Время работы: пн-пт с 9:00 до 16:00; сб,вс - выходной</p>',
+            photo: '<img src="./images/stolovaya_12.jpg" width="300" height="220">',
             hint: 'Столовая'
         },
     ],
     buffets: [
         {
-            lat: 52.09564364240153,
-            lon: 23.756744938574816,
-            name: 'Буфет 2-й Корпус',
+            lat: 52.09561163266305,
+            lon: 23.7567576822989,
+            name: 'Буфет (2-й корпус)',
             icon: 'https://cdn-icons-png.flaticon.com/128/5589/5589708.png',
             description: '<p>Местонахождение:</p><p>возле гардероба на 1-ом этаже 2-го корпуса</p>',
-            work_time: '',
+            work_time: 'Время работы: вт-сб: с 9:00 до 17:00, вс,пн -выходной',
+            photo: '',
+            hint: 'Буфет'
+        },
+        {
+            lat: 52.09669585666265,
+            lon: 23.758422730635104,
+            name: 'Буфет (1-й корпус)',
+            icon: 'https://cdn-icons-png.flaticon.com/128/5589/5589708.png',
+            description: '<p>Местонахождение:</p><p>возле входа на 1-ом этаже</p>',
+            work_time: 'Время работы: пн-пт: с 9:00 до 17:00, сб,вс -выходной',
             photo: '',
             hint: 'Буфет'
         },
     ],
     printing_points: [
         {
-            lat: 52.09655184182871,
-            lon: 23.757886672563842,
+            lat: 52.0965432404161,
+            lon: 23.758007766520272,
             name: 'Пункт печати',
             icon: 'https://cdn-icons-png.flaticon.com/128/3233/3233468.png',
-            description: '<p>Местонахождение: библиотека 1-го корпуса</p>',
+            description: '<p>Местонахождение: ауд.117а возле библиотеки 1-го корпуса</p><p>Почта: 325b@list.ru</p>',
+            work_time: '<p>Время работы: пн-чт: 8:40-17:20; пт: 8:40-16:05; сб,вс: выходной; Тех. перерывы: 10:40-10:50, 12:15-12:30, 16:00-16:10, 14:00-14:10</p>',
+            photo: '<img src="./images/printingpoint.jpg" width="250" height="300">',
+            hint: 'Пункт печати'
+        },
+        {
+            lat: 52.095741949677745,
+            lon: 23.759090147690774,
+            name: 'Пункт печати',
+            icon: 'https://cdn-icons-png.flaticon.com/128/3233/3233468.png',
+            description: '<p>Местонахождение: в библиотеке 5-го корпуса</p>',
             work_time: '',
             photo: '',
+            hint: 'Пункт печати'
+        },
+        {
+            lat: 52.09653108812442,
+            lon: 23.757809535359193,
+            name: 'Пункт печати',
+            icon: 'https://cdn-icons-png.flaticon.com/128/3233/3233468.png',
+            description: '<p>Местонахождение: в библиотеке 1-го корпуса</p>',
+            work_time: '',
+            photo: '',
+            hint: 'Пункт печати'
+        },
+        {
+            lat: 52.098919020876195,
+            lon: 23.757615814428487,
+            name: 'Пункт печати',
+            icon: 'https://cdn-icons-png.flaticon.com/128/3233/3233468.png',
+            description: '<p>Печать: А4: чб - 0,4 руб.; цвет. - 1,50 руб. А3: чб - 0,80 руб.</p><p>Местонахождение: магазин "КанцТоварищ"</p>',
+            work_time: 'Время работы: пн-пт: 10:00-19:00; сб: 10:00-18:00; вс: 10:00-16:00',
+            photo: '<img src="./images/kanctow.jpg" width="260" height="260">',
+            hint: 'Пункт печати'
+        },
+        {
+            lat: 52.09944171595132,
+            lon: 23.760363923989768,
+            name: 'Пункт печати',
+            icon: 'https://cdn-icons-png.flaticon.com/128/3233/3233468.png',
+            description: '<p>Печать: А4: чб - 0,35 руб.; цвет. - 0,70 руб. А3: чб - 0,70 руб; цвет. - 1,4 руб.</p><p>Местонахождение: магазин "Канцелярские штучки"</p>',
+            work_time: 'Время работы: пн-пт: 9:00-19:00; сб,вс: 10:00-17:00.',
+            photo: '<img src="./images/kancstuch.jpg" width="260" height="250">',
             hint: 'Пункт печати'
         },
     ],
@@ -71,12 +131,74 @@ const categoriesData = {
         {
             lat: 52.09627699661334,
             lon: 23.756373913044893,
-            name: 'Деканат ФЭИС',
+            name: 'Деканат факультета электноронно-информационных систем',
             icon: 'https://cdn-icons-png.flaticon.com/128/5352/5352126.png',
-            description: '',
+            description: 'Местонахождение: четвёртый этаж',
             work_time: '',
             photo: '',
             hint: 'Деканат'
+        },
+        {
+            lat: 52.0962868369978,
+            lon: 23.756513528450764,
+            name: 'Деканат факультета инженерных систем и экологии',
+            icon: 'https://cdn-icons-png.flaticon.com/128/5352/5352126.png',
+            description: 'Местонахождение: второй этаж',
+            work_time: '',
+            photo: '',
+            hint: 'Деканат'
+        },
+        {
+            lat: 52.09622488809493,
+            lon: 23.756406240089753,
+            name: 'Деканат машиностроительного факультета',
+            icon: 'https://cdn-icons-png.flaticon.com/128/5352/5352126.png',
+            description: 'Местонахождение: второй этаж',
+            work_time: '',
+            photo: '',
+            hint: 'Деканат'
+        },
+        {
+            lat: 52.096761831843104,
+            lon: 23.758762106520734,
+            name: 'Деканат строительного факультета',
+            icon: 'https://cdn-icons-png.flaticon.com/128/5352/5352126.png',
+            description: 'Местонахождение: второй этаж',
+            work_time: '',
+            photo: '',
+            hint: 'Деканат'
+        },
+        {
+            lat: 52.09573240427634,
+            lon: 23.759052605158836,
+            name: 'Деканат экономического факультета',
+            icon: 'https://cdn-icons-png.flaticon.com/128/5352/5352126.png',
+            description: 'Местонахождение: второй этаж',
+            work_time: '',
+            photo: '',
+            hint: 'Деканат'
+        },
+    ],
+    libraries: [
+        {
+            lat: 52.09573864569903,
+            lon: 23.7590331507492,
+            name: 'Бибилотека (5-й корпус)',
+            icon: 'https://cdn-icons-png.flaticon.com/128/2784/2784504.png',
+            description: '<p>Печать: А4 - 0.25 руб. (чб)</p><p>Местонахождение: подвал 5-го корпуса</p>',
+            work_time: '<p>Время работы: пн-пт: 8:30-17:30; сб: 8:30-16:15; вс: выходной; обед: 12:00-12:45</p>',
+            photo: '',
+            hint: 'Бибилотека'
+        },
+        {
+            lat: 52.0965294361592,
+            lon: 23.757798806524008,
+            name: 'Бибилотека (1-й корпус)',
+            icon: 'https://cdn-icons-png.flaticon.com/128/2784/2784504.png',
+            description: '<p>Печать: А4 - 0.25 руб. (чб)</p><p>Местонахождение: в 1-ом коропусе на первом этаже</p>',
+            work_time: '<p>Время работы: пн-пт: 8:30-18:00; сб: 8:30-16:15; вс: выходной; холл библиотеки для самостоятельной работы открыт до 20:00</p>',
+            photo: '',
+            hint: 'Бибилотека'
         },
     ]
 };
@@ -86,56 +208,129 @@ const inputsData = [
         id: 1,
         coordinates: [52.09669129633542,23.758239508724536],
         offset: [-10, -5],
-        name: '1-й корпус'
+        name: 'Вход в 1-й корпус',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1427/1427060.png',
+        size: [20, 20],
+        content: '',
     },
     {
         id: 2,
         coordinates: [52.0956952076013,23.756876834695724],
         offset: [-15, -8],
-        name: '2-й и 3-й корпус'
+        name: 'Вход во 2-й и 3-й корпус',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1427/1427060.png',
+        size: [20, 20],
+        content: '',
     },
+    
     {
         id: 3,
-        coordinates: [52.09562364354393,23.759130917417963],
-        offset: [-7, -6],
-        name: '5-й корпус'
+        coordinates: [52.09633501744579,23.759713585667857],
+        offset: [0, 0],
+        name: 'Вход в спортивный комплекс',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1427/1427060.png',
+        size: [20, 20],
+        content: '',
     },
     {
         id: 4,
-        coordinates: [52.09633501744579,23.759713585667857],
-        offset: [0, 0],
-        name: 'Спортивный комплекс'
+        coordinates: [52.09453638642828,23.760066780219404],
+        offset: [0-3, -5],
+        name: 'Вход в общежитие №3',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1427/1427060.png',
+        size: [20, 20],
+        content: '',
     },
     {
         id: 5,
-        coordinates: [52.09453638642828,23.760066780219404],
-        offset: [0-3, -5],
-        name: 'Общежитие №3'
+        coordinates: [52.094624308673325,23.760859152402446],
+        offset: [0, 0],
+        name: 'Вход в общежитие №1"',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1427/1427060.png',
+        size: [20, 20],
+        content: '',
     },
     {
         id: 6,
-        coordinates: [52.094624308673325,23.760859152402446],
-        offset: [0, 0],
-        name: 'Общежитие №1"'
+        coordinates: [52.09421229300924,23.760716921659053],
+        offset: [-5, -3],
+        name: 'Вход в ТЦ "Зодчие"',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1427/1427060.png',
+        size: [20, 20],
+        content: '',
     },
     {
         id: 7,
-        coordinates: [52.09421229300924,23.760716921659053],
-        offset: [-5, -3],
-        name: 'ТЦ "Зодчие"'
+        coordinates: [52.093857651414346,23.760983067334546],
+        offset: [-10, -7],
+        name: 'Вход в общежитие №4',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1427/1427060.png',
+        size: [20, 20],
+        content: '',
     },
     {
         id: 8,
-        coordinates: [52.093857651414346,23.760983067334546],
-        offset: [-10, -7],
-        name: 'Общежитие №4'
+        coordinates: [52.09442659805926,23.761976695704632],
+        offset: [-3, -9],
+        name: 'Вход в общежитие №2',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1427/1427060.png',
+        size: [20, 20],
+        content: '',
     },
     {
         id: 9,
-        coordinates: [52.09442659805926,23.761976695704632],
-        offset: [-3, -9],
-        name: 'Общежитие №2'
-    }
+        coordinates: [52.09716239332213,23.76002790408178],
+        offset: [-5, -15],
+        name: 'Проход',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3769/3769367.png',
+        size: [21, 21],
+        content: 'Проход открыт с 5:00 до 20:00',
+    },
+    {
+        id: 10,
+        coordinates: [52.09632652963727,23.755910874725878],
+        offset: [-5, -15],
+        name: 'Проход',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3769/3769367.png',
+        size: [21, 21],
+        content: 'Проход открыт с 6:00 до 22:30',
+    },
+    {
+        id: 11,
+        coordinates: [52.0956954733038,23.75763687622695],
+        offset: [-5, -15],
+        name: 'Проход',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3769/3769367.png',
+        size: [21, 21],
+        content: 'Проход открыт с 6:00 до 22:30',
+    },
+    {
+        id: 12,
+        coordinates: [52.09838595765311,23.75943423455672],
+        offset: [-5, -15],
+        name: 'Проход',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3769/3769367.png',
+        size: [21, 21],
+        content: 'Проход открыт с 5:00 до 20:00',
+    },
+    {
+        id: 13,
+        coordinates: [52.098177455050326,23.75764306221131],
+        offset: [-5, -15],
+        name: 'Проход',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3769/3769367.png',
+        size: [21, 21],
+        content: 'Проход открыт с 5:00 до 20:00',
+    },
+    {
+        id: 14,
+        coordinates: [52.09810807522574,23.75729437503939],
+        offset: [-5, -15],
+        name: 'Проход',
+        icon: 'https://cdn-icons-png.flaticon.com/128/3769/3769367.png',
+        size: [21, 21],
+        content: 'Проход открыт с 5:00 до 20:00',
+    },
 ]
 
 const pathsData = [
@@ -307,6 +502,152 @@ const pathsData = [
             [52.09649176794453,23.757259808626284]
         ]
     },
+    {
+        id: 14,
+        coordinates: [
+            [52.095509225518356,23.75925056985559],
+            [52.095040055434524,23.759482580935398],
+            [52.09487898357558,23.759552318369764]
+        ]
+    },
+    {
+        id: 15,
+        coordinates: [
+            [52.09656779824091,23.757166997405424],
+            [52.0970980739785,23.756925598594083],
+            [52.09732360084786,23.75680305888871],
+            [52.09794472258607,23.756459736134794]
+        ]
+    },
+    {
+        id: 16,
+        coordinates: [
+            [52.09722401846717,23.758131952589142],
+            [52.097451984881666,23.758177550142392],
+            [52.097605613761424,23.758217783277615],
+            [52.09777080551192,23.75831702501118],
+            [52.097933635248445,23.75849288141286],
+            [52.09807735104395,23.75871550476108],
+            [52.09817976891306,23.758911306019172],
+            [52.09827227517238,23.759125882740356],
+            [52.09837469259166,23.759420925732012]
+        ]
+    },
+    {
+        id: 17,
+        coordinates: [
+            [52.09732270161678,23.756807113046982],
+            [52.09734913250668,23.756918424721118],
+            [52.097389604776296,23.757072651739467],
+            [52.09744081453394,23.757244313116413],
+            [52.097493676157264,23.7573837879852],
+            [52.097578750200114,23.757582271452307],
+            [52.09768695093166,23.75789206659352],
+            [52.09773155268316,23.758059704656937],
+            [52.097751375669425,23.75815760528598],
+            [52.0977695467324,23.758315855617862]
+        ]
+    },
+    {
+        id: 18,
+        coordinates: [
+            [52.09709973708934,23.75692747377457],
+            [52.09713071094242,23.75709913515154],
+            [52.097198027375285,23.757471291652333],
+            [52.09725088928779,23.757754264703415],
+            [52.0973161406242,23.75808149420323]
+        ]
+    },
+    {
+        id: 19,
+        coordinates: [
+            [52.09490424693818,23.759699303554278],
+            [52.09547907297938,23.760092641940286]
+        ]
+    },
+    {
+        id: 20,
+        coordinates: [
+            [52.09425254669111,23.76119578958956],
+            [52.094328540713484,23.76161756695716],
+            [52.09381516560625,23.76187079486317],
+            [52.0936742746183,23.76206151697403],
+            [52.09373622708385,23.762369971010752],
+            [52.094340878607476,23.762075693474998],
+            [52.09438341867093,23.762075693474998],
+            [52.094432979858496,23.762309045659297]
+        ]
+    },
+    {
+        id: 21,
+        coordinates: [
+            [52.09432952081663,23.761616365181215],
+            [52.09513066403578,23.7612076823511]
+        ]
+    },
+]
+
+const otherMarks = [
+    {
+        id: 1,
+        coordinates: [52.09710327459845,23.758017012081904],
+        name: 'Фонтан',
+        photo: '<img src="./images/fontan.jpg" width="260" height="230">',
+        icon: 'https://cdn-icons-png.flaticon.com/128/382/382316.png',
+        description: '',
+        offset: [-11,-20],
+        size: [26, 26],
+    },
+    {
+        id: 2,
+        coordinates: [52.09478552225663,23.759954245095727],
+        name: 'Здравпункт',
+        photo: '<img src="./images/zdravpunkt.jpg" width="260" height="240">',
+        icon: 'https://cdn-icons-png.flaticon.com/128/507/507579.png',
+        description: 'Время работы с 8:00 до 19:00. Выходные: сб, вс',
+        offset: [-11,-13],
+        size: [23, 23],
+    },
+    {
+        id: 3,
+        coordinates: [52.09727835879974,23.7592112731978],
+        name: 'Кветка-парк',
+        photo: '<img src="./images/kvetkapark.jpg" width="300" height="200">',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1906/1906867.png',
+        description: '"Кветка-парк" был создан студентом факультета инженерных систем и экологии БрГТУ Криллом Вавренюком (Кириллом Кветка) в 2022 году.',
+        offset: [-13,-13],
+        size: [25, 25],
+    },
+    {
+        id: 4,
+        coordinates: [52.096254148671356,23.758449740688054],
+        name: 'Ректорат',
+        photo: '',
+        icon: 'https://cdn-icons-png.flaticon.com/128/9523/9523699.png',
+        description: '<p>Местонахождение: 2-й этаж 1-го корпуса</p><p>Время работы: пн-чт: 8:30-17:30; пт: 8:30-16:15</p><p>сб,вс - выходной; обед: 13:00-13:45</p>',
+        offset: [-13,-13],
+        size: [25, 25],
+    },
+    {
+        id: 5,
+        coordinates: [52.09456573741141,23.760895782730383],
+        name: 'Банкомат Беларусбанк',
+        photo: '<img src="./images/bankomat.jpg" width="250" height="290">',
+        icon: 'https://cdn-icons-png.flaticon.com/128/5501/5501224.png',
+        description: '<p>Местонахождение: возле входа в 1-е общежитие</p><p>Время работы: круглосуточно</p>',
+        offset: [-13,-13],
+        size: [22, 22],
+    },
+    {
+        id: 6,
+        coordinates: [52.095877305688134,23.758375791977386],
+        name: 'Профком',
+        photo: '<img src="./images/profcom.jpg" width="280" height="210">',
+        icon: 'https://www.bstu.by/uploads/images/prof_logo.png',
+        description: '<p>Местонахождение: а.132</p><p>Время работы: пн-пт: с 8:30 до 13:30 с 14:30 до 17:30<p>сб,вс - выходной</p></p>',
+        offset: [-13,-10],
+        size: [22, 25],
+    },
 ]
 
 const polygonData = [
@@ -331,10 +672,11 @@ const polygonData = [
             [52.096445985756695,23.758217054913647]],
         name: '1-й корпус',
         textCoordinates: [52.09671512364851,23.758689136066575],
-        fillColor: '#e8e53355',
-        strokeColor: '#c4c22b',
+        fillColor: '#3498db55',
+        strokeColor: '#206390',
+        // fillColor: '#e8e53355',
+        // strokeColor: '#c4c22b',
         offset: [0,0],
-        markerTemplate: 'islands#yellowStretchyIcon'
     },
     {
         id: 2,
@@ -358,9 +700,8 @@ const polygonData = [
         name: '2-й корпус',
         textCoordinates: [52.095894585176985,23.756666998816936],
         fillColor: '#3498db55',
-        strokeColor: '#2980b9',
+        strokeColor: '#206390',
         offset: [0,0],
-        markerTemplate: 'islands#blueStretchyIcon'
     },
     {
         id: 3,
@@ -373,10 +714,11 @@ const polygonData = [
         ],
         name: '3-й корпус',
         textCoordinates: [52.09505786347536,23.757160308750276],
-        fillColor: '#db343455',
-        strokeColor: '#db3434',
+        fillColor: '#3498db55',
+        strokeColor: '#206390',
+        // fillColor: '#db343455',
+        // strokeColor: '#db3434',
         offset: [0,0],
-        markerTemplate: 'islands#redStretchyIcon'
     },
     {
         id: 4,
@@ -409,10 +751,11 @@ const polygonData = [
         ],
         name: '5-й корпус',
         textCoordinates: [52.0957112144053,23.759098457954728],
-        fillColor: '#34db6055',
-        strokeColor: '#34db60',
+        fillColor: '#3498db55',
+        strokeColor: '#206390',
+        // fillColor: '#34db6055',
+        // strokeColor: '#34db60',
         offset: [0,0],
-        markerTemplate: 'islands#darkGreenStretchyIcon'
     },
     {
         id: 5,
@@ -427,10 +770,11 @@ const polygonData = [
         ],
         name: 'Галерея',
         textCoordinates: [52.095840613917844,23.757952574635055],
-        fillColor: '#c534db55',
-        strokeColor: '#c534db',
+        fillColor: '#3498db55',
+        strokeColor: '#206390',
+        // fillColor: '#c534db55',
+        // strokeColor: '#c534db',
         offset: [0,0],
-        markerTemplate: 'islands#pinkStretchyIcon'
     },
     {
         id: 6,
@@ -441,12 +785,13 @@ const polygonData = [
             [52.09636639803663,23.757476788352808],
             [52.096532007389754,23.75738827545522]
         ],
-        name: 'Актовый зал',
+        name: 'Актовый зал и библиотека',
         textCoordinates: [52.09649946952253,23.757697050164982],
-        fillColor: '#1518d355',
-        strokeColor: '#1518d3',
+        fillColor: '#3498db55',
+        strokeColor: '#206390',
+        // fillColor: '#1518d355',
+        // strokeColor: '#1518d3',
         offset: [0,0],
-        markerTemplate: 'islands#darkBlueStretchyIcon'
     },
     {
         id: 7,
@@ -463,9 +808,8 @@ const polygonData = [
         name: 'Спортивный комплекс',
         textCoordinates: [52.09616862568659,23.759671329976513],
         fillColor: '#d3811555',
-        strokeColor: '#d38115',
+        strokeColor: '#aa6811',
         offset: [0,0],
-        markerTemplate: 'islands#orangeStretchyIcon'
     },
     {
         id: 8,
@@ -479,9 +823,8 @@ const polygonData = [
         name: 'Общежитие №1',
         textCoordinates: [52.094688361687844,23.760931567409827],
         fillColor: '#8234db55',
-        strokeColor: '#8234db',
+        strokeColor: '#6e26c1',
         offset: [0,0],
-        markerTemplate: 'islands#violetStretchyIcon'
     },
     {
         id: 9,
@@ -499,9 +842,8 @@ const polygonData = [
         name: 'Общежитие №2',
         textCoordinates: [52.09451063644836,23.761881830207802],
         fillColor: '#8234db55',
-        strokeColor: '#8234db',
+        strokeColor: '#6e26c1',
         offset: [0,0],
-        markerTemplate: 'islands#violetStretchyIcon'
     },
     {
         id: 10,
@@ -519,9 +861,8 @@ const polygonData = [
         name: 'Общежитие №3',
         textCoordinates: [52.09460185949256,23.75994894968477],
         fillColor: '#8234db55',
-        strokeColor: '#8234db',
+        strokeColor: '#6e26c1',
         offset: [0,0],
-        markerTemplate: 'islands#violetStretchyIcon'
     },
     {
         id: 11,
@@ -539,9 +880,8 @@ const polygonData = [
         name: 'Общежитие №4',
         textCoordinates: [52.093848452917825,23.76100198623656],
         fillColor: '#8234db55',
-        strokeColor: '#8234db',
+        strokeColor: '#6e26c1',
         offset: [0,0],
-        markerTemplate: 'islands#violetStretchyIcon'
     },
     {
         id: 12,
@@ -557,7 +897,6 @@ const polygonData = [
         fillColor: '#808080',
         strokeColor: '#444444',
         offset: [0,0],
-        markerTemplate: 'islands#grayStretchyIcon'
     },
     {
         id: 13,
@@ -573,7 +912,6 @@ const polygonData = [
         fillColor: '#808080',
         strokeColor: '#444444',
         offset: [0,0],
-        markerTemplate: 'islands#grayStretchyIcon'
     },
     {
         id: 14,
@@ -592,7 +930,6 @@ const polygonData = [
         fillColor: '#808080',
         strokeColor: '#444444',
         offset: [0,0],
-        markerTemplate: 'islands#grayStretchyIcon'
     },
     {
         id: 15,
@@ -607,9 +944,8 @@ const polygonData = [
         name: 'Стадион',
         textCoordinates: [52.097149042058945,23.76108560718589],
         fillColor: '#d3811555',
-        strokeColor: '#d38115',
+        strokeColor: '#aa6811',
         offset: [0,0],
-        markerTemplate: 'islands#orangeStretchyIcon'
     },
     {
         id: 16,
@@ -623,9 +959,8 @@ const polygonData = [
         name: 'ТЦ "Зодчие"',
         textCoordinates: [52.09416826578735,23.760414355226644],
         fillColor: '#e8e53355',
-        strokeColor: '#c4c22b',
+        strokeColor: '#aca91d',
         offset: [0,0],
-        markerTemplate: 'islands#yellowStretchyIcon'
     },
     {
         id: 17,
@@ -641,9 +976,8 @@ const polygonData = [
         name: 'Игровая площадка',
         textCoordinates: [52.09673508058623,23.759923402035138],
         fillColor: '#d3811555',
-        strokeColor: '#d38115',
+        strokeColor: '#aa6811',
         offset: [0,0],
-        markerTemplate: 'islands#orangeStretchyIcon'
     },
     {
         id: 18,
@@ -654,12 +988,27 @@ const polygonData = [
             [52.09641756966248,23.760271618080044],
             [52.096339101265336,23.759822348070013] 
         ],
-        name: 'Игровая площадка',
+        name: 'Спортивная площадка',
         textCoordinates: [52.09625512218848,23.760081944208203],
         fillColor: '#d3811555',
-        strokeColor: '#d38115',
+        strokeColor: '#aa6811',
         offset: [0,0],
-        markerTemplate: 'islands#orangeStretchyIcon'
+    },
+    {
+        id: 19,
+        polygonCoordinates: [
+            [52.09563477724011,23.759778965030655],
+            [52.095401845484936,23.75981115153856],
+            [52.095482380538584,23.760091442380478],
+            [52.09560091135177,23.760339546714565],
+            [52.095887531592346,23.76047902158366],
+            [52.09563477724011,23.759778965030655]
+        ],
+        name: 'Волейбольная площадка',
+        textCoordinates: [52.09625512218848,23.760081944208203],
+        fillColor: '#d3811555',
+        strokeColor: '#aa6811',
+        offset: [0,0],
     },
 ]
 
@@ -668,14 +1017,24 @@ var categoriesIsVisible = {
     canteens: false,
     buffets: false,
     printing_points: false,
-    deans: false
+    deans: false,
+    libraries: false
 };
+
 
 function init() {
     const myMap = new ymaps.Map("map", {
         center: [52.095648, 23.758507],
         zoom: 18	
-    });
+    },
+    {
+        restrictMapArea: [
+            [52.10175772519929,23.74978576350242],
+            [52.09180637101968,23.770685536147614]
+        ]
+    }
+    );
+    
 
     myMap.controls.remove('searchControl'); // удаляем поиск
     myMap.controls.remove('trafficControl'); // удаляем контроль трафика
@@ -685,7 +1044,7 @@ function init() {
     //myMap.controls.remove('rulerControl'); // удаляем контрол правил
     //myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 
-
+    // Функция отображения категории маркеров
     function showMarkers(category) {
         if (categoriesIsVisible[category]) {
             categoriesData[category].forEach((item) => {
@@ -717,6 +1076,7 @@ function init() {
         }
     }
 
+    // Обработчик нажатий на кнопки категорий маркеров
     const categoryButtons = document.querySelectorAll('.category_button');
     categoryButtons.forEach((button) => {
         button.addEventListener('click', (e) => {
@@ -730,174 +1090,209 @@ function init() {
         showMarkers(category);
     }
 
+    // менеджер полигонов
     const polygonManager = new ymaps.ObjectManager();
     myMap.geoObjects.add(polygonManager);
     
+    // менеджер путей
     const pathManager = new ymaps.ObjectManager();
     myMap.geoObjects.add(pathManager);
 
+    // менеджер входов
     const inputsManager = new ymaps.ObjectManager();
     myMap.geoObjects.add(inputsManager);
 
-    document.getElementById('togglePolygons').addEventListener('change', function() {
-        if (this.checked) {
-            pathsData.forEach((item) => {
-                pathManager.add({
-                    type: 'Feature',
-                    id: item.id,
-                    geometry: {
-                        type: 'LineString', 
-                        coordinates: item.coordinates,
-                    },
-                    properties: {
-                    },
-                    options: {
-                        strokeColor: "#964b00",
-                        strokeWidth: 2,
-                        strokeStyle: [5, 2]
-                    }
-                });
-            });
+    // менеджер других объектов на карте
+    const otherMarksManager = new ymaps.ObjectManager();
+    myMap.geoObjects.add(otherMarksManager);
 
-
-            
-            const customBalloonLayout = ymaps.templateLayoutFactory.createClass(
-                '<div class="custom-balloon">' +
-                '<h3 class="custom-balloon-header">$[properties.balloonContentHeader]</h3>' +
-                '<div class="custom-balloon-content">' +
-                '<form>' +
-                '<label for="imageSelect">Выберите этаж:</label>' +
-                '<select id="floorSelect">' +
-                '<option value="text">Выберите этаж</option>' +
-                '<option value="1 этаж.jpg">Этаж 1</option>' +
-                '<option value="2 этаж.jpg">Этаж 2</option>' +
-                '<option value="3 этаж.jpg">Этаж 3</option>' +
-                '<option value="4 этаж.jpg">Этаж 4</option>' +
-                '<option value="5 этаж.jpg">Этаж 5</option>' +
-                // Добавьте другие варианты этажей по мере необходимости
-                '</select>' +
-                '<br>' +
-                '<img id="selectedImage" src="" alt="Selected Image">' +
-                '</form>' +
-                '</div>' +
-                '</div>', {
-                build: function () {
-                    // Вызывается при создании макета балуна
-                    // Получаем ссылку на макет
-                    customBalloonLayout.superclass.build.call(this);
-            
-                    // Находим элементы в DOM
-                    this._floorSelect = document.getElementById('floorSelect');
-                    this._selectedImage = document.getElementById('selectedImage');
-            
-                    // Подписываемся на событие изменения выбранного значения в списке
-                    this._floorSelect.addEventListener('change', this._onFloorSelectChange.bind(this));
-                },
-            
-                clear: function () {
-                    // Вызывается при удалении макета балуна
-                    // Отписываемся от события
-                    this._floorSelect.removeEventListener('change', this._onFloorSelectChange.bind(this));
-            
-                    // Вызываем метод clear родительского класса
-                    customBalloonLayout.superclass.clear.call(this);
-                },
-            
-                _onFloorSelectChange: function () {
-                    // Обработчик изменения выбранного значения в списке
-                    const selectedValue = this._floorSelect.value;
-            
-                    if (selectedValue === 'text') {
-                        // Если выбран текст "Выберите этаж", скрываем изображение
-                        this._selectedImage.style.display = 'none';
-                    } else {
-                        // Иначе, отображаем изображение соответствующего этажа
-                        this._selectedImage.style.display = 'block';
-                        this._selectedImage.src = selectedValue;
-                    }
-                }
-            });
-            
-            const customBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
-                '<style>.custom-balloon-content { background-color: white; }</style>' +
-                '<h3 class="custom-balloon-header">$[properties.balloonContentHeader]</h3>' +
-                '<div class="custom-balloon-content">' +
-                'Дополнительный текст балуна: $[properties.balloonContent]' +
-                '</div>'
-            );
-            
-            
-            
-                
-
-
-
-
-
-            polygonData.forEach((item) => {
-                polygonManager.add({
-                    type: 'Feature',
-                    id: item.id,
-                    geometry: {
-                        type: 'Polygon',
-                        coordinates: [
-                            item.polygonCoordinates,
-                            []
-                        ],
-                        fillRule: 'nonZero'
-                    },
-                    properties: {
-                        balloonContentHeader: item.name,
-                        hintContent: item.name,
-                        labelContent: item.name
-                    },
-                    options: {
-                        fillColor: item.fillColor,
-                        strokeColor: item.strokeColor,
-                        opacity: 0.75,
-                        strokeWidth: 3,
-                        strokeStyle: 'solid',
-                        labelDefaults: 'dark',
-                        labelLayout: '<div style="color: #1c65e8;">$[properties.labelContent]</div>',
-                        labelPermissibleInaccuracyOfVisibility: 22,
-                        balloonLayout: customBalloonLayout,
-                        balloonContentLayout: customBalloonContentLayout
-                    }
-                });
-            });
-
-            const polylabel = new ymaps.polylabel.create(myMap, polygonManager);
-
-            inputsData.forEach((item) => {
-                inputsManager.add({
-                    type: 'Feature',
-                    id: item.id,
-                    geometry: {
-                        type: 'Point',
-                        coordinates: item.coordinates
-                    },
-                    properties: {
-                        balloonContentHeader: item.name,
-                        hintContent: item.name,
-                        labelContent: item.name
-                    },
-                    options: {
-                        iconLayout: 'default#image',
-                        iconImageHref: 'https://cdn-icons-png.flaticon.com/128/1427/1427060.png',
-                        iconImageSize: [20, 20],
-                        iconImageOffset: item.offset
-                    }
-                });
-            });
-
-        } else {
-            polygonManager.removeAll();
-            //polygonManager.objects.remove(polygonManager.objects.getById('1'));
-            pathManager.removeAll();
-            inputsManager.removeAll();
-
-        }
+    // отображение других объектов на карте
+    otherMarks.forEach((item) =>{
+        otherMarksManager.add({
+            type: 'Feature',
+            id: item.id,
+            geometry: {
+                type: 'Point',
+                coordinates: item.coordinates
+            },
+            properties: {
+                balloonContentHeader: item.name,
+                hintContent: item.name,
+                labelContent: item.name,
+                balloonContentBody: item.photo,
+                balloonContentFooter: item.description,
+            },
+            options: {
+                iconLayout: 'default#image',
+                iconImageHref: item.icon,
+                iconImageSize: item.size,
+                iconImageOffset: item.offset
+            }
+        });
     });
+
+    // отображение путей
+    pathsData.forEach((item) => {
+        pathManager.add({
+            type: 'Feature',
+            id: item.id,
+            geometry: {
+                type: 'LineString', 
+                coordinates: item.coordinates,
+            },
+            properties: {
+            },
+            options: {
+                strokeColor: "#964b00",
+                strokeWidth: 2,
+                strokeStyle: [5, 2]
+            }
+        });
+    });
+
+    // отображение полигонов
+    polygonData.forEach((item) => {
+        polygonManager.add({
+            type: 'Feature',
+            id: item.id,
+            geometry: {
+                type: 'Polygon',
+                coordinates: [
+                    item.polygonCoordinates,
+                    []
+                ],
+                fillRule: 'nonZero'
+            },
+            properties: {
+                balloonContentHeader: item.name,
+                hintContent: item.name,
+                labelContent: item.name
+            },
+            options: {
+                fillColor: item.fillColor,
+                strokeColor: item.strokeColor,
+                opacity: 0.75,
+                strokeWidth: 3,
+                strokeStyle: 'solid',
+                labelDefaults: 'dark',
+                labelLayout: '<div style="color: ' + item.strokeColor + ';">$[properties.labelContent]</div>',
+                labelPermissibleInaccuracyOfVisibility: 22,
+            }
+        });
+    });
+
+    // подписывание полигонов
+    const polylabel = new ymaps.polylabel.create(myMap, polygonManager);
+
+    // отображение входов в корпуса
+    inputsData.forEach((item) => {
+        inputsManager.add({
+            type: 'Feature',
+            id: item.id,
+            geometry: {
+                type: 'Point',
+                coordinates: item.coordinates
+            },
+            properties: {
+                balloonContentHeader: item.name,
+                hintContent: item.name,
+                labelContent: item.name,
+                balloonContentBody: item.content,
+            },
+            options: {
+                iconLayout: 'default#image',
+                iconImageHref: item.icon,
+                iconImageSize: item.size,
+                iconImageOffset: item.offset
+            }
+        });
+    });
+
+
+    // document.getElementById('togglePolygons').addEventListener('change', function() {
+    //     if (this.checked) {
+    //         pathsData.forEach((item) => {
+    //             pathManager.add({
+    //                 type: 'Feature',
+    //                 id: item.id,
+    //                 geometry: {
+    //                     type: 'LineString', 
+    //                     coordinates: item.coordinates,
+    //                 },
+    //                 properties: {
+    //                 },
+    //                 options: {
+    //                     strokeColor: "#964b00",
+    //                     strokeWidth: 2,
+    //                     strokeStyle: [5, 2]
+    //                 }
+    //             });
+    //         });
+
+    //         polygonData.forEach((item) => {
+    //             polygonManager.add({
+    //                 type: 'Feature',
+    //                 id: item.id,
+    //                 geometry: {
+    //                     type: 'Polygon',
+    //                     coordinates: [
+    //                         item.polygonCoordinates,
+    //                         []
+    //                     ],
+    //                     fillRule: 'nonZero'
+    //                 },
+    //                 properties: {
+    //                     balloonContentHeader: item.name,
+    //                     hintContent: item.name,
+    //                     labelContent: item.name
+    //                 },
+    //                 options: {
+    //                     fillColor: item.fillColor,
+    //                     strokeColor: item.strokeColor,
+    //                     opacity: 0.75,
+    //                     strokeWidth: 3,
+    //                     strokeStyle: 'solid',
+    //                     labelDefaults: 'dark',
+    //                     labelLayout: '<div style="color: #1c65e8;">$[properties.labelContent]</div>',
+    //                     labelPermissibleInaccuracyOfVisibility: 22,
+    //                     //balloonLayout: customBalloonLayout,
+    //                     //balloonContentLayout: customBalloonContentLayout
+    //                 }
+    //             });
+    //         });
+
+    //         const polylabel = new ymaps.polylabel.create(myMap, polygonManager);
+
+    //         inputsData.forEach((item) => {
+    //             inputsManager.add({
+    //                 type: 'Feature',
+    //                 id: item.id,
+    //                 geometry: {
+    //                     type: 'Point',
+    //                     coordinates: item.coordinates
+    //                 },
+    //                 properties: {
+    //                     balloonContentHeader: item.name,
+    //                     hintContent: item.name,
+    //                     labelContent: item.name
+    //                 },
+    //                 options: {
+    //                     iconLayout: 'default#image',
+    //                     iconImageHref: item.icon,
+    //                     iconImageSize: [20, 20],
+    //                     iconImageOffset: item.offset
+    //                 }
+    //             });
+    //         });
+
+    //     } else {
+    //         polygonManager.removeAll();
+    //         //polygonManager.objects.remove(polygonManager.objects.getById('1'));
+    //         pathManager.removeAll();
+    //         inputsManager.removeAll();
+
+    //     }
+    // });
     
 };
 

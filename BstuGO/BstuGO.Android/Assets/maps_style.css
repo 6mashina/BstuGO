@@ -55,6 +55,11 @@ body {
     left: 10px;
 }
 
+.library_btn {
+    top: 225px;
+    left: 10px;
+}
+
 .active {
     background-color: #3498db;
 }
